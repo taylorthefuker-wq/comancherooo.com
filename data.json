@@ -453,21 +453,21 @@
      "items": [
       {
        "name": "Combo 1p single",
-       "desc": "Classic Burger + Fries + Coca Cola",
        "price": "600.00",
-       "img": "img/a875d90c4b41b101.img"
+       "desc": "Classic Burger + Fries + Coca Cola",
+       "img": "img/uploads/1789643182500-1000303775.jpg"
       },
       {
        "name": "Combo 2p couple",
-       "desc": "1Penne Pasta + 2 Mini Burger + 2 Fries + 1L coca cola",
        "price": "990.00",
-       "img": "img/6486b055607a408e.img"
+       "desc": "1Penne Pasta + 2 Mini Burger + 2 Fries + 1L coca cola",
+       "img": "img/uploads/1789643156592-1000303774.jpg"
       },
       {
        "name": "Combo 4p Family",
-       "desc": "4 Classic Burger + Fries + 2L Coca Cola",
        "price": "1,990.00",
-       "img": "img/cc499d09b1f05bcf.img"
+       "desc": "4 Classic Burger + Fries + 2L Coca Cola",
+       "img": "img/uploads/1789643169686-1000303773.jpg"
       },
       {
        "name": "sandwich and a salad",
