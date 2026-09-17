@@ -67,37 +67,37 @@
               "name": "Comanchero Chicken Burger",
               "desc": "Chicken breast, lettuce, jalapeno, mozzarella cheese patty,  pickles and classic sauce.",
               "price": "750.00",
-              "img": "img/cards/24_comancherochickenburger.jpg"
+              "img": "img/b84ce971faddf60c.img"
             },
             {
               "name": "Maestro Chicken Burger",
               "desc": "Crispy Chicken breast , patty, cheddar cheese, tomato, lettuce, pickles and ranch sauce.",
               "price": "750.00",
-              "img": "img/cards/28_maestrochickenburger.jpg"
+              "img": "img/c05fcbc248394bb3.img"
             },
             {
               "name": "Maputo Chicken Burger",
               "desc": "Grilled Chicken breast , lettuce, cheddar cheese slice, jalapeno , tortilla chips and guacamole sauce .",
               "price": "750.00",
-              "img": "img/cards/26_maputochickenburger.jpg"
+              "img": "img/542391c60cbbcc08.img"
             },
             {
               "name": "Buffalo Crisp",
               "desc": "Crispy chicken breast dipped in buffalo saude, pickles, lettuce, tomatoes and runch sauce",
               "price": "750.00",
-              "img": "img/cards/23_buffalocrisp.jpg"
+              "img": "img/c35c1a9f84bd12b7.img"
             },
             {
               "name": "BBQ Crispy burger",
               "desc": "Crispy chicken breast dipped in BBQ sauce with coleslaw, patty, mozzarella , pickles, and classic sauce",
               "price": "700.00",
-              "img": "img/cards/25_bbqcrispyburger.jpg"
+              "img": "img/241e597fb9c101cf.img"
             },
             {
               "name": "Kids Meal Burger",
               "desc": "2 Mini Burgers, served with fries. Chicken or Beef",
               "price": "450.00",
-              "img": "img/cards/22_kidsmealburger.jpg"
+              "img": "img/a390b9c9de986e28.img"
             }
           ]
         }
