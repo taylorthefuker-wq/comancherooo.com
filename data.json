@@ -473,25 +473,25 @@
               "name": "Rocca Salad",
               "desc": "Rugula leaves, pomegranate seeds",
               "price": "470.00",
-              "img": "img/cards/49_roccasalad.jpg"
+              "img": "img/630e36958aa39415.img"
             },
             {
               "name": "Crab Salad",
               "desc": "Freshly cut iceberg and mixed cabbage, cucumber, carrot, crab sticks, with a lemon mayo dressing",
               "price": "600.00",
-              "img": "img/cards/47_crabsalad.jpg"
+              "img": "img/4bd7eff73f3f8b96.img"
             },
             {
               "name": "Tuna Salad",
               "desc": "Tuna, Lettuce, corn, egg, cucumber, black olives, green pepper, red radish cherry tomato and lemon oil dressing",
               "price": "600.00",
-              "img": "img/cards/46_tunasalad.jpg"
+              "img": "img/501aa699774eb9cb.img"
             },
             {
               "name": "Signature Salad",
               "desc": "Grilled chicken, fuslilli pasta, tomato, cucumber, corn, olives, carrot, and lemon mayo dressing.",
               "price": "680.00",
-              "img": "img/cards/48_signaturesalad.jpg"
+              "img": "img/04da7d173f033fb3.img"
             }
           ]
         }
