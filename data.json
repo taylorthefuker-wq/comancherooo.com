@@ -319,45 +319,45 @@
      "items": [
       {
        "name": "Pizza Margherita",
-       "desc": "Tomate orégano mozzarella",
        "price": "950.00",
-       "img": "img/16ce896cfcd6f1a9.img"
+       "desc": "Tomate orégano mozzarella",
+       "img": "img/uploads/1789642795692-1000303764.jpg"
       },
       {
        "name": "Pizza vegetariana",
-       "desc": "Cogumelos azeitonas pimentos cebola ananás",
        "price": "1,020.00",
-       "img": "img/36bd33269252d2ef.img"
+       "desc": "Cogumelos azeitonas pimentos cebola ananás",
+       "img": "img/uploads/1789642807730-1000303765.jpg"
       },
       {
        "name": "Pizza Fajita Beef",
-       "desc": "Bife cebola pimenta cogumelos",
        "price": "1,150.00",
-       "img": "img/a95252902ba13e04.img"
+       "desc": "Bife cebola pimenta cogumelos",
+       "img": "img/uploads/1789642821287-1000303766.jpg"
       },
       {
        "name": "Pizza Fajita chicken",
-       "desc": "Galinha cebola pimenta cogumelos",
        "price": "1,150.00",
-       "img": "img/fca35a25ba39bb83.img"
+       "desc": "Galinha cebola pimenta cogumelos",
+       "img": "img/uploads/1789642833203-1000303767.jpg"
       },
       {
        "name": "Pizza Comanchero",
-       "desc": "Beef a Comanchero com mix cheese jalapeno",
        "price": "1,150.00",
-       "img": "img/c18bb1248f69d668.img"
+       "desc": "Beef a Comanchero com mix cheese jalapeno",
+       "img": "img/uploads/1789642843681-1000303768.jpg"
       },
       {
        "name": "Pizza cheese burger",
-       "desc": "Cheese Beef a Comanchero",
        "price": "1,150.00",
-       "img": "img/91184695967683b9.img"
+       "desc": "Cheese Beef a Comanchero",
+       "img": "img/uploads/1789642855685-1000303769.jpg"
       },
       {
        "name": "Pizza atum Large",
-       "desc": "Atum azeitona cebola",
        "price": "1,150.00",
-       "img": "img/efc7168c87a0f7fa.img"
+       "desc": "Atum azeitona cebola",
+       "img": "img/uploads/1789642875815-1000303770.jpg"
       }
      ]
     },
