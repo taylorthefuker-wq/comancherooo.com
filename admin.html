@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COMANCHERO — Admin</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='18' fill='%23E63952'/><text x='50' y='72' font-size='62' font-family='Arial Black,Arial' font-weight='900' fill='white' text-anchor='middle'>C</text></svg>">
+<style>
+  :root{
+    --red:#E63952; --bg:#0b0b0b; --card:#161616; --card2:#1e1e1e; --text:#f5f5f5;
+    --muted:#9a9a9a; --border:#2a2a2a; --green:#3ddc84;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{background:var(--bg);color:var(--text);font-family:'Segoe UI',system-ui,-apple-system,Arial,sans-serif;line-height:1.5;min-height:100vh}
+  button{font-family:inherit}
+  input,textarea{font-family:inherit}
+
+  /* LOGIN / TOKEN SCREENS */
+  .gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px}
+  .gate-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:34px 28px;max-width:420px;width:100%}
+  .gate-card h1{font-family:'Arial Black',Arial,sans-serif;color:var(--red);font-size:1.7rem;letter-spacing:.04em}
+  .gate-card p{color:var(--muted);font-size:.9rem;margin-top:6px}
+  .field{width:100%;background:var(--card2);border:1px solid var(--border);color:var(--text);border-radius:10px;padding:13px 14px;font-size:1rem;margin-top:14px;outline:none}
+  .field:focus{border-color:var(--red)}
+  .btn{display:inline-block;background:var(--red);color:#fff;font-weight:800;letter-spacing:.08em;padding:13px 26px;border-radius:999px;border:none;cursor:pointer;font-size:.95rem;transition:transform .12s,box-shadow .12s}
+  .btn:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(230,57,82,.35)}
+  .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+  .btn-sm{padding:8px 14px;font-size:.8rem;letter-spacing:.04em}
+  .btn-ghost{background:transparent;border:1px solid var(--border);color:var(--muted)}
+  .btn-ghost:hover{border-color:var(--red);color:#fff;box-shadow:none}
+  .btn-danger{background:transparent;border:1px solid #5a2a2a;color:#e07a7a}
+  .btn-danger:hover{border-color:var(--red);color:#fff;box-shadow:none}
+  .gate .btn{width:100%;margin-top:18px}
+  .err{color:#e07a7a;font-size:.85rem;margin-top:10px;display:none}
+  .steps{font-size:.85rem;color:var(--muted);margin-top:12px;padding-left:18px}
+  .steps li{margin-top:6px}
+  .steps a{color:var(--red)}
+
+  /* APP LAYOUT */
+  header{position:sticky;top:0;z-index:50;background:rgba(11,11,11,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  .hbar{max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:12px 16px;flex-wrap:wrap}
+  .hbar .brand{font-family:'Arial Black',Arial,sans-serif;font-weight:900;letter-spacing:.05em;font-size:1.05rem}
+  .hbar .brand span{color:var(--red)}
+  .hbar .actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .badge{background:var(--red);color:#fff;border-radius:999px;font-size:.7rem;font-weight:800;padding:2px 8px;margin-left:6px;vertical-align:middle}
+
+  .wrap{max-width:1000px;margin:0 auto;padding:22px 16px 90px}
+
+  .panel{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:20px;margin-top:16px}
+  .panel h3{font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .lbl{display:block;font-size:.78rem;font-weight:700;color:var(--muted);margin:12px 0 4px;text-transform:uppercase;letter-spacing:.06em}
+
+  .chips{display:flex;gap:6px;overflow-x:auto;padding:4px 2px;scrollbar-width:none}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;background:var(--card2);border:1px solid var(--border);color:var(--muted);font-weight:700;font-size:.82rem;padding:9px 16px;border-radius:999px;cursor:pointer;white-space:nowrap}
+  .chip:hover{border-color:var(--red);color:#fff}
+  .chip.active{background:var(--red);border-color:var(--red);color:#fff}
+  .chip-add{border-style:dashed}
+
+  .sec-head{display:flex;align-items:center;gap:8px;margin:26px 0 12px;flex-wrap:wrap}
+  .sec-head h4{font-size:1rem;font-weight:800;letter-spacing:.04em;text-transform:uppercase;border-bottom:1px solid var(--border);padding-bottom:8px;flex:1;min-width:120px}
+  .mini{background:none;border:none;color:var(--muted);font-size:.78rem;font-weight:700;cursor:pointer;padding:4px 6px;border-radius:6px}
+  .mini:hover{color:#fff;background:var(--card2)}
+
+  .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:14px}
+  .card{background:var(--card2);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+  .card .ph{aspect-ratio:4/3;background:#252525;display:flex;align-items:center;justify-content:center;color:#444;font-weight:900;font-size:1.6rem;overflow:hidden}
+  .card .ph img{width:100%;height:100%;object-fit:cover}
+  .card .cb{padding:12px 14px}
+  .card .cb .r1{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+  .card .cb h5{font-size:.92rem;font-weight:800}
+  .card .cb .pr{color:var(--red);font-weight:900;white-space:nowrap;font-size:.9rem}
+  .card .cb .ds{color:var(--muted);font-size:.78rem;margin-top:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .card .ops{display:flex;gap:6px;padding:0 14px 12px}
+  .card .ops button{flex:1}
+
+  .add-tile{border:1px dashed var(--border);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;color:var(--muted);cursor:pointer;background:transparent;min-height:150px;font-weight:700;font-size:.85rem}
+  .add-tile:hover{border-color:var(--red);color:#fff}
+
+  /* MODAL */
+  .overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;padding:16px;z-index:100}
+  .modal{background:var(--card);border:1px solid var(--border);border-radius:18px;padding:24px;max-width:520px;width:100%;max-height:92vh;overflow:auto}
+  .modal h2{font-size:1.05rem;font-weight:900;letter-spacing:.04em;margin-bottom:4px}
+  .modal .hint{color:var(--muted);font-size:.8rem}
+  .imgpick{margin-top:12px;display:flex;gap:12px;align-items:center}
+  .imgpick .prev{width:96px;height:72px;border-radius:10px;object-fit:cover;background:var(--card2);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:#444;font-weight:900}
+  .mrow{display:flex;gap:8px;margin-top:20px;flex-wrap:wrap}
+  .mrow .btn{flex:1}
+
+  /* TOAST */
+  #toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--card);border:1px solid var(--border);color:#fff;padding:12px 22px;border-radius:12px;font-size:.9rem;font-weight:600;transition:transform .25s;z-index:200;max-width:90vw;text-align:center}
+  #toast.show{transform:translateX(-50%) translateY(0)}
+  #toast.ok{border-color:var(--green)}
+  #toast.bad{border-color:var(--red)}
+
+  .empty{color:var(--muted);font-size:.88rem;text-align:center;padding:26px 10px}
+  .link{color:var(--red);text-decoration:none;font-weight:700;font-size:.85rem}
+  @media(max-width:620px){ .grid2{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <h1>COMANCHERO</h1>
+    <p>Admin panel — enter your password to continue.</p>
+    <input class="field" type="password" id="pw" placeholder="Password" autocomplete="current-password">
+    <div class="err" id="pw-err">Wrong password.</div>
+    <button class="btn" id="pw-btn" onclick="checkPassword()">UNLOCK</button>
+  </div>
+</div>
+
+<!-- GITHUB TOKEN SETUP (first time only) -->
+<div class="gate" id="tokensetup" style="display:none">
+  <div class="gate-card">
+    <h1>One-time setup</h1>
+    <p>Publishing needs a GitHub access token — it stays saved on this device.</p>
+    <ol class="steps">
+      <li>Open <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com → New fine-grained token</a></li>
+      <li><b>Repository access:</b> Only select repositories → <b>comancherooo.com</b></li>
+      <li><b>Permissions → Contents:</b> Read and write</li>
+      <li>Generate, copy the token (starts with <b>github_pat_</b>) and paste it below</li>
+    </ol>
+    <input class="field" type="password" id="pat" placeholder="github_pat_..." autocomplete="off">
+    <div class="err" id="pat-err"></div>
+    <button class="btn" id="pat-btn" onclick="saveToken()">SAVE &amp; CONTINUE</button>
+  </div>
+</div>
+
+<!-- APP -->
+<header style="display:none" id="apphead">
+  <div class="hbar">
+    <div class="brand">COMAN<span>CHERO</span> <span style="font-size:.65rem;color:var(--muted);letter-spacing:.2em">ADMIN</span></div>
+    <div class="actions">
+      <span id="dirty" class="badge" style="display:none">0</span>
+      <a class="btn btn-ghost btn-sm" href="/" style="text-decoration:none" target="_blank">Live site</a>
+      <button class="btn btn-sm" id="pub-btn" onclick="publish()">PUBLISH</button>
+      <button class="btn btn-ghost btn-sm" onclick="logout()">Exit</button>
+    </div>
+  </div>
+</header>
+
+<div class="wrap" id="app" style="display:none">
+
+  <div class="panel">
+    <h3>Site details</h3>
+    <div class="lbl">Brand name</div>
+    <input class="field" id="s-brand" onchange="DATA.brand=this.value.trim()||DATA.brand;markDirty()">
+    <div class="grid2">
+      <div><div class="lbl">Tagline</div><input class="field" id="s-tag" onchange="DATA.tagline=this.value;markDirty()"></div>
+      <div><div class="lbl">Location</div><input class="field" id="s-loc" onchange="DATA.location=this.value;markDirty()"></div>
+    </div>
+    <div class="lbl">Homepage hero image</div>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+      <img id="hero-prev" style="width:130px;height:70px;object-fit:cover;border-radius:8px;border:1px solid var(--border)">
+      <label class="btn btn-ghost btn-sm" style="cursor:pointer">Replace
+        <input type="file" accept="image/*" style="display:none" onchange="uploadHero(this)">
+      </label>
+      <span style="color:var(--muted);font-size:.78rem" id="hero-note"></span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <h3>Menus</h3>
+    <div class="chips" id="chips"></div>
+  </div>
+
+  <div id="menu-editor"></div>
+</div>
+
+<!-- GENERIC MODAL -->
+<div class="overlay" id="overlay" style="display:none" onclick="if(event.target===this)closeModal()">
+  <div class="modal" id="modalbox"></div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+"use strict";
+const REPO = "taylorthefuker-wq/comancherooo.com";
+const PASS_HASH = "9024f8c2fc4004033c556a00867cd6d1cbbf68c0b5acf1cae12f8719cc7e3256";
+let DATA = null, DATA_SHA = null, PAT = "", CUR = 0, DIRTY = 0, BUSY = false;
+
+const $ = id => document.getElementById(id);
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[c]));
+
+function toast(msg, ok) {
+  const t = $("toast");
+  t.textContent = msg; t.className = "show " + (ok === undefined ? "" : ok ? "ok" : "bad");
+  clearTimeout(t._h); t._h = setTimeout(() => t.className = "", 3200);
+}
+
+/* ---------- crypto helpers ---------- */
+async function sha256(s) {
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+function uB64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let s = "";
+  for (const b of bytes) s += String.fromCharCode(b);
+  return btoa(s);
+}
+function b64u(str) { return new TextDecoder().decode(Uint8Array.from(atob(str.replace(/\s+/g, "")), c => c.charCodeAt(0))); }
+
+/* ---------- gate ---------- */
+async function checkPassword() {
+  if (await sha256($("pw").value) === PASS_HASH) {
+    sessionStorage.setItem("cmx_auth", "1");
+    enter();
+  } else {
+    $("pw-err").style.display = "block";
+    $("pw").value = "";
+  }
+}
+function enter() {
+  $("pw-err").style.display = "none";
+  PAT = localStorage.getItem("cmx_pat") || "";
+  if (PAT) startApp(); else showTokenScreen();
+}
+function showTokenScreen() {
+  $("gate").style.display = "none";
+  $("tokensetup").style.display = "flex";
+}
+async function saveToken() {
+  const tok = $("pat").value.trim();
+  $("pat-err").style.display = "none";
+  $("pat-btn").disabled = true;
+  try {
+    const r = await fetch("https://api.github.com/repos/" + REPO, {
+      headers: { Authorization: "Bearer " + tok, Accept: "application/vnd.github+json" }
+    });
+    if (!r.ok) throw new Error(r.status === 401 ? "Token not accepted. Check you copied the whole token." : "Could not check token (error " + r.status + ").");
+    const repo = await r.json();
+    if (!repo.permissions || !repo.permissions.push) throw new Error("This token can't write to the repo. Make sure Contents permission is 'Read and write'.");
+    localStorage.setItem("cmx_pat", tok);
+    PAT = tok;
+    startApp();
+  } catch (e) {
+    $("pat-err").textContent = e.message; $("pat-err").style.display = "block";
+  } finally { $("pat-btn").disabled = false; }
+}
+function logout() { sessionStorage.removeItem("cmx_auth"); location.reload(); }
+
+/* ---------- github api ---------- */
+async function gh(path, opts) {
+  const o = opts || {};
+  const r = await fetch("https://api.github.com" + path, {
+    method: o.method || "GET",
+    headers: Object.assign({
+      Authorization: "Bearer " + PAT,
+      Accept: "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    }, o.headers || {}),
+    body: o.body
+  });
+  if (!r.ok) {
+    let d = null; try { d = await r.json(); } catch (e) {}
+    const err = new Error((d && d.message) || ("GitHub error " + r.status));
+    err.status = r.status; throw err;
+  }
+  return r.json();
+}
+async function loadData() {
+  const j = await gh("/repos/" + REPO + "/contents/data.json");
+  DATA_SHA = j.sha;
+  DATA = JSON.parse(b64u(j.content));
+}
+
+/* ---------- publish ---------- */
+async function publish() {
+  if (BUSY) return;
+  if (!DIRTY) { toast("No changes to publish"); return; }
+  BUSY = true; $("pub-btn").disabled = true; $("pub-btn").textContent = "PUBLISHING…";
+  try {
+    const j = await gh("/repos/" + REPO + "/contents/data.json", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        message: "Menu update via admin panel — " + new Date().toISOString().slice(0, 16).replace("T", " "),
+        content: uB64(JSON.stringify(DATA, null, 1)),
+        sha: DATA_SHA,
+        branch: "main"
+      })
+    });
+    DATA_SHA = j.content.sha;
+    DIRTY = 0; updateDirty();
+    toast("Published ✓ — live on the site in ~1 minute", true);
+  } catch (e) {
+    if (e.status === 409) {
+      toast("Someone else changed the menu meanwhile. Reload the page, redo your changes, publish again.", false);
+    } else {
+      toast("Publish failed: " + e.message, false);
+    }
+  } finally {
+    BUSY = false; $("pub-btn").disabled = false; $("pub-btn").textContent = "PUBLISH";
+  }
+}
+function markDirty() { DIRTY++; updateDirty(); }
+function updateDirty() {
+  const b = $("dirty");
+  b.style.display = DIRTY ? "inline-block" : "none";
+  b.textContent = DIRTY + (DIRTY === 1 ? " change" : " changes");
+}
+
+/* ---------- images ---------- */
+function resizeB64(file, maxDim, cb, onerr) {
+  const img = new Image();
+  const url = URL.createObjectURL(file);
+  img.onload = () => {
+    const scale = Math.min(1, maxDim / Math.max(img.width, img.height));
+    const c = document.createElement("canvas");
+    c.width = Math.round(img.width * scale); c.height = Math.round(img.height * scale);
+    c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+    URL.revokeObjectURL(url);
+    cb(c.toDataURL("image/jpeg", 0.85));
+  };
+  img.onerror = () => { URL.revokeObjectURL(url); onerr("Could not read that image."); };
+  img.src = url;
+}
+function uploadImage(file, path) {
+  return new Promise(resolve => {
+    resizeB64(file, 900, async dataUrl => {
+      try {
+        toast("Uploading image…");
+        await gh("/repos/" + REPO + "/contents/" + path, {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: "admin: upload image " + path, content: dataUrl.split(",")[1] })
+        });
+        toast("Image uploaded ✓", true);
+        resolve(path + "?v=" + Date.now());
+      } catch (e) { toast("Image upload failed: " + e.message, false); resolve(null); }
+    }, m => { toast(m, false); resolve(null); });
+  });
+}
+async function uploadHero(input) {
+  const file = input.files[0]; if (!file) return;
+  input.value = "";
+  resizeB64(file, 1600, async dataUrl => {
+    try {
+      $("hero-note").textContent = "uploading…";
+      let sha = null;
+      try { sha = (await gh("/repos/" + REPO + "/contents/img/hero.jpg")).sha; } catch (e) { /* may not exist */ }
+      await gh("/repos/" + REPO + "/contents/img/hero.jpg", {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: "admin: replace hero image", content: dataUrl.split(",")[1], sha: sha || undefined })
+      });
+      $("hero-prev").src = dataUrl;
+      $("hero-note").textContent = "Replaced ✓ — live in ~1 min";
+      toast("Hero image replaced ✓", true);
+    } catch (e) { $("hero-note").textContent = ""; toast("Upload failed: " + e.message, false); }
+  }, m => toast(m, false));
+}
+
+/* ---------- rendering ---------- */
+function slugify(name, existing) {
+  let base = name.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "") || "menu";
+  let s = base, i = 2;
+  while (existing.has(s)) { s = base + "-" + i++; }
+  return s;
+}
+
+function render() {
+  $("s-brand").value = DATA.brand || "";
+  $("s-tag").value = DATA.tagline || "";
+  $("s-loc").value = DATA.location || "";
+  $("hero-prev").src = "img/hero.jpg?v=" + Date.now();
+  renderChips();
+  renderMenu();
+}
+
+function renderChips() {
+  const box = $("chips");
+  box.innerHTML = "";
+  DATA.menus.forEach((m, i) => {
+    const b = document.createElement("button");
+    b.className = "chip" + (i === CUR ? " active" : "");
+    b.textContent = m.name;
+    b.onclick = () => { CUR = i; render(); };
+    box.appendChild(b);
+  });
+  const add = document.createElement("button");
+  add.className = "chip chip-add";
+  add.textContent = "+ Add menu";
+  add.onclick = () => addMenu();
+  box.appendChild(add);
+}
+
+function renderMenu() {
+  const m = DATA.menus[CUR];
+  const box = $("menu-editor");
+  if (!m) { box.innerHTML = ""; return; }
+  let h = "<div class='panel'><h3>Editing menu</h3>" +
+    "<div style='display:flex;align-items:center;gap:10px;flex-wrap:wrap'>" +
+    "<span style='font-size:1.25rem;font-weight:900;font-family:Arial Black,Arial,sans-serif'>" + esc(m.name) + "</span>" +
+    "<button class='btn btn-ghost btn-sm' onclick='renameMenu()'>Rename</button>" +
+    "<button class='btn btn-danger btn-sm' onclick='deleteMenu()'>Delete menu</button>" +
+    "</div></div>";
+
+  if (!m.sections.length) {
+    h += "<div class='panel'><div class='empty'>No categories in this menu yet.</div>" +
+      "<button class='btn btn-sm' onclick='addSection()'>+ Add category</button></div>";
+  } else {
+    m.sections.forEach((sec, si) => {
+      h += "<div class='sec-head'><h4>" + esc(sec.name) + "</h4>" +
+        "<button class='mini' onclick='renameSection(" + si + ")'>Rename</button>" +
+        "<button class='mini' style='color:#e07a7a' onclick='deleteSection(" + si + ")'>Delete</button>" +
+        "<button class='mini' onclick='addItem(" + si + ")'>+ Add product</button></div>";
+      h += "<div class='cards'>";
+      sec.items.forEach((it, ii) => {
+        const ph = it.img ? "<img src='" + esc(it.img) + "' loading='lazy'>" : "C";
+        h += "<div class='card'><div class='ph'>" + ph + "</div><div class='cb'>" +
+          "<div class='r1'><h5>" + esc(it.name) + "</h5>" +
+          (it.price ? "<span class='pr'><small>MT</small> " + esc(it.price) + "</span>" : "") + "</div>" +
+          (it.desc ? "<div class='ds'>" + esc(it.desc) + "</div>" : "") +
+          "</div><div class='ops'>" +
+          "<button class='btn btn-ghost btn-sm' onclick='editItem(" + si + "," + ii + ")'>Edit</button>" +
+          "<button class='btn btn-danger btn-sm' onclick='deleteItem(" + si + "," + ii + ")'>Delete</button>" +
+          "</div></div>";
+      });
+      h += "<button class='add-tile' onclick='addItem(" + si + ")'>+ Add<br>product</button></div>";
+    });
+    h += "<div style='margin-top:14px'><button class='btn btn-ghost btn-sm' onclick='addSection()'>+ Add category</button></div>";
+  }
+  box.innerHTML = h;
+}
+
+/* ---------- modal helpers ---------- */
+function openModal(html) {
+  $("modalbox").innerHTML = html;
+  $("overlay").style.display = "flex";
+}
+function closeModal() { $("overlay").style.display = "none"; }
+function promptModal(title, label, value, cb) {
+  openModal("<h2>" + esc(title) + "</h2><div class='lbl'>" + esc(label) + "</div>" +
+    "<input class='field' id='pm-in' value=\"" + esc(value) + "\">" +
+    "<div class='mrow'><button class='btn btn-ghost' onclick='closeModal()'>Cancel</button>" +
+    "<button class='btn' onclick='promptApply()'>Save</button></div>");
+  const inp = $("pm-in"); inp.focus(); inp.select();
+  inp.onkeydown = e => { if (e.key === "Enter") promptApply(); };
+  $("modalbox")._cb = cb;
+}
+function promptApply() {
+  const v = $("pm-in").value.trim();
+  if (!v) { toast("Name can't be empty", false); return; }
+  const cb = $("modalbox")._cb;
+  closeModal(); cb(v);
+}
+
+/* ---------- menu/section ops ---------- */
+function addMenu() {
+  promptModal("New menu", "Menu name (e.g. Desserts)", "", name => {
+    const slugs = new Set(DATA.menus.map(m => m.slug));
+    DATA.menus.push({ name, slug: slugify(name, slugs), sections: [] });
+    CUR = DATA.menus.length - 1; markDirty(); render();
+  });
+}
+function renameMenu() {
+  const m = DATA.menus[CUR];
+  promptModal("Rename menu", "Menu name", m.name, name => {
+    m.name = name;
+    const slugs = new Set(DATA.menus.filter(x => x !== m).map(x => x.slug));
+    m.slug = slugify(name, slugs);
+    markDirty(); render();
+  });
+}
+function deleteMenu() {
+  const m = DATA.menus[CUR];
+  if (!confirm("Delete menu '" + m.name + "' and everything in it?")) return;
+  DATA.menus.splice(CUR, 1);
+  CUR = Math.max(0, CUR - 1); markDirty(); render();
+}
+function addSection() {
+  promptModal("New category", "Category name (e.g. Juicy Burgers)", "", name => {
+    DATA.menus[CUR].sections.push({ name, items: [] });
+    markDirty(); render();
+  });
+}
+function renameSection(si) {
+  promptModal("Rename category", "Category name", DATA.menus[CUR].sections[si].name, name => {
+    DATA.menus[CUR].sections[si].name = name; markDirty(); render();
+  });
+}
+function deleteSection(si) {
+  const sec = DATA.menus[CUR].sections[si];
+  if (!confirm("Delete category '" + sec.name + "' and its " + sec.items.length + " products?")) return;
+  DATA.menus[CUR].sections.splice(si, 1); markDirty(); render();
+}
+
+/* ---------- item ops ---------- */
+function itemForm(si, ii) {
+  const sec = DATA.menus[CUR].sections[si];
+  const it = ii != null ? sec.items[ii] : { name: "", desc: "", price: "", img: "" };
+  openModal(
+    "<h2>" + (ii != null ? "Edit product" : "New product in '" + esc(sec.name) + "'") + "</h2>" +
+    "<div class='lbl'>Name</div><input class='field' id='it-name' value=\"" + esc(it.name) + "\" placeholder='e.g. Classic Burger'>" +
+    "<div class='lbl'>Price (MT)</div><input class='field' id='it-price' value=\"" + esc(it.price) + "\" placeholder='e.g. 600.00' inputmode='decimal'>" +
+    "<div class='lbl'>Description</div><textarea class='field' id='it-desc' rows='3' placeholder='Ingredients…'>" + esc(it.desc) + "</textarea>" +
+    "<div class='lbl'>Photo</div>" +
+    "<div class='imgpick'>" +
+    "<div class='prev' id='it-ph'>" + (it.img ? "<img src='" + esc(it.img) + "' style='width:100%;height:100%;object-fit:cover;border-radius:9px'>" : "C") + "</div>" +
+    "<label class='btn btn-ghost btn-sm' style='cursor:pointer'>Choose photo<input type='file' accept='image/*' style='display:none' id='it-file'></label>" +
+    "<button class='btn btn-ghost btn-sm' id='it-rm' style='display:" + (it.img ? "inline-block" : "none") + "' onclick='rmImg()'>Remove</button>" +
+    "</div>" +
+    "<div class='hint' id='it-note'>Photos are uploaded to GitHub when you save the product.</div>" +
+    "<div class='mrow'>" +
+    (ii != null ? "<button class='btn btn-danger' onclick='deleteItem(" + si + "," + ii + ")'>Delete</button>" : "") +
+    "<button class='btn btn-ghost' onclick='closeModal()'>Cancel</button>" +
+    "<button class='btn' onclick='saveItem(" + si + "," + (ii == null ? -1 : ii) + ")'>SAVE</button>" +
+    "</div>"
+  );
+  const fileInput = $("it-file");
+  fileInput.onchange = () => {
+    const f = fileInput.files[0]; if (!f) return;
+    $("it-note").textContent = "photo ready — press SAVE";
+    fileInput._newfile = f;
+    resizeB64(f, 400, u => { $("it-ph").innerHTML = "<img src='" + u + "' style='width:100%;height:100%;object-fit:cover;border-radius:9px'>"; }, m => toast(m, false));
+  };
+  $("modalbox")._img = it.img || "";
+}
+function rmImg() { $("modalbox")._img = ""; $("it-file")._newfile = null; $("it-ph").textContent = "C"; $("it-rm").style.display = "none"; }
+
+async function saveItem(si, ii) {
+  const name = $("it-name").value.trim();
+  if (!name) { toast("Product needs a name", false); return; }
+  const price = $("it-price").value.trim();
+  const desc = $("it-desc").value.trim();
+  const fileInput = $("it-file");
+  let img = $("modalbox")._img;
+  if (fileInput._newfile) {
+    const fname = fileInput._newfile.name.replace(/[^a-z0-9.]/gi, "-").toLowerCase();
+    const path = "img/uploads/" + Date.now() + "-" + fname.replace(/\.(jpg|jpeg|png|webp|gif)$/i, "") + ".jpg";
+    const done = await uploadImage(fileInput._newfile, path);
+    if (!done) return;
+    img = done;
+  }
+  const sec = DATA.menus[CUR].sections[si];
+  const item = { name, price, desc, img: img.replace(/\?v=\d+$/, "") };
+  if (ii >= 0) sec.items[ii] = item; else sec.items.push(item);
+  closeModal(); markDirty(); renderMenu();
+  toast(ii >= 0 ? "Product saved — remember to PUBLISH" : "Product added — remember to PUBLISH", true);
+}
+function addItem(si) { itemForm(si, null); }
+function editItem(si, ii) { itemForm(si, ii); }
+function deleteItem(si, ii) {
+  const it = DATA.menus[CUR].sections[si].items[ii];
+  if (!confirm("Delete '" + it.name + "'?")) return;
+  closeModal();
+  DATA.menus[CUR].sections[si].items.splice(ii, 1); markDirty(); renderMenu();
+  toast("Product deleted — remember to PUBLISH", true);
+}
+
+/* ---------- boot ---------- */
+async function startApp() {
+  $("gate").style.display = "none";
+  $("tokensetup").style.display = "none";
+  toast("Loading menu…");
+  try {
+    await loadData();
+    $("apphead").style.display = "block";
+    $("app").style.display = "block";
+    CUR = 0; render();
+  } catch (e) {
+    if (e.status === 401) {
+      localStorage.removeItem("cmx_pat"); PAT = "";
+      toast("Saved token stopped working — enter it again.", false);
+      showTokenScreen(); $("pat").focus();
+    } else {
+      toast("Could not load menu: " + e.message, false);
+    }
+  }
+}
+$("pw").addEventListener("keydown", e => { if (e.key === "Enter") checkPassword(); });
+if (sessionStorage.getItem("cmx_auth") === "1") enter();
+</script>
+</body>
+</html>
