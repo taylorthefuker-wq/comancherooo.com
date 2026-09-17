@@ -561,13 +561,13 @@
               "name": "Mix Appetizer",
               "desc": "Crispy strips, mozzarella sticks, onion rings, fried wings, cheddar balls, garlic bread and french fries served with cocktail and salsa.",
               "price": "1,150.00",
-              "img": "img/a80bc5c55297050b.img"
+              "img": "img/e08c81fe29141b0d.img"
             },
             {
               "name": "Mozzarella sticks",
               "desc": "A basket of golden crispy breaded mozzarella sticks served with salsa and classic sauce.",
               "price": "490.00",
-              "img": "img/cards/04_mozzarellasticks.jpg"
+              "img": "img/6eb23fa977eeb6f8.img"
             },
             {
               "name": "Cheddar Balls",
@@ -579,19 +579,19 @@
               "name": "Chili Cheddar Balls",
               "desc": "Breaded chili cheddar balls served with salsa and classic sauce .",
               "price": "550.00",
-              "img": "img/cards/05_chilicheddarballs.jpg"
+              "img": "img/4ec6e30ff56965d6.img"
             },
             {
               "name": "Fried Chicken Wings",
               "desc": "Dipped in BBQ or BUFFALO sauce.",
               "price": "550.00",
-              "img": "img/cf1061678263bb58.img"
+              "img": "img/4fe9be0987b47e68.img"
             },
             {
               "name": "Grilled Chicken Wings",
               "desc": "Dipped in BBQ or BUFFALO sauce.",
               "price": "550.00",
-              "img": "img/25ce069e8f205c08.img"
+              "img": "img/a926b29a947377a6.img"
             },
             {
               "name": "Nachos",
@@ -603,7 +603,7 @@
               "name": "NACHOS BREAKFAST",
               "desc": "NACHOS, CHEESE, EGG ,",
               "price": "650.00",
-              "img": "img/4406d790a115b36a.img"
+              "img": "img/0a7a35c65aec3ffb.img"
             }
           ]
         }
