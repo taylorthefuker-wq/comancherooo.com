@@ -471,9 +471,9 @@
       },
       {
        "name": "sandwich and a salad",
+       "price": "750",
        "desc": "",
-       "price": "0.00",
-       "img": ""
+       "img": "img/uploads/1789643276092-1000303778.jpg"
       }
      ]
     }
