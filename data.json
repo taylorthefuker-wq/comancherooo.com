@@ -12,8 +12,8 @@
      "items": [
       {
        "name": "Classic Burger",
+       "price": "601",
        "desc": "BEEF PATTY, LETTUCE, TOMATOES, REDONIONS, DILL PICKLES ,AND\nCLASSIC SAUCE.",
-       "price": "600.00",
        "img": "img/cards/20_classicburger.jpg"
       },
       {
