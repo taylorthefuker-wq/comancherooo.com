@@ -171,9 +171,9 @@
      "items": [
       {
        "name": "1 Carne",
-       "desc": "",
        "price": "700.00",
-       "img": "img/117a3470fb0a9966.img"
+       "desc": "",
+       "img": "img/uploads/1789641695542-1000303469.jpg"
       },
       {
        "name": "1 ADANA KEBAP",
@@ -183,27 +183,9 @@
       },
       {
        "name": "1 URFA KEBAP",
-       "desc": "",
        "price": "700.00",
-       "img": "img/ba371b4d06da8519.img"
-      },
-      {
-       "name": "2 ESPETADAS",
        "desc": "",
-       "price": "1,100.00",
-       "img": "img/32a899d69b89f8d6.img"
-      },
-      {
-       "name": "2 ESPETADAS",
-       "desc": "",
-       "price": "1,100.00",
-       "img": "img/32a899d69b89f8d6.img"
-      },
-      {
-       "name": "2 ESPETADAS",
-       "desc": "",
-       "price": "1,100.00",
-       "img": "img/32a899d69b89f8d6.img"
+       "img": "img/uploads/1789641749877-1000303469.jpg"
       },
       {
        "name": "2 ESPETADAS",
@@ -216,12 +198,6 @@
        "desc": "1-P 3-ESP 1.500 MZN /2-P 6-ESP 3.000MZN /4-P 9-ESP 6000MZN /FAMILY 14-ESP 9.000MZN",
        "price": "0.00",
        "img": "img/377fdd69cb128776.img"
-      },
-      {
-       "name": "3 ESPETADAS",
-       "desc": "",
-       "price": "1,500.00",
-       "img": "img/dd1af5dcaabf60f2.img"
       },
       {
        "name": "3 ESPETADAS",
@@ -243,9 +219,9 @@
       },
       {
        "name": "PICANHA GRILLS",
-       "desc": "Com batata e salada",
        "price": "1,500.00",
-       "img": "img/f90b9762ba982af2.img"
+       "desc": "Com batata e salada",
+       "img": "img/uploads/1789641813021-1000303476.jpg"
       },
       {
        "name": "T-BONE",
@@ -264,12 +240,6 @@
        "desc": "2-PERSON",
        "price": "3.00",
        "img": "img/c59c3e749fe0d349.img"
-      },
-      {
-       "name": "GRILLED CARNERO",
-       "desc": "",
-       "price": "1,500.00",
-       "img": "img/9c7e48524807def2.img"
       }
      ]
     }
