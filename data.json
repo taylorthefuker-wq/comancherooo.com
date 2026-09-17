@@ -366,15 +366,15 @@
      "items": [
       {
        "name": "1/2 Grilled chicken",
-       "desc": "Barbecue sauce OR buffalo sauce served with fries and salad",
        "price": "600.00",
-       "img": "img/ec55deb16d99ce8e.img"
+       "desc": "Barbecue sauce OR buffalo sauce served with fries and salad",
+       "img": "img/uploads/1789643105329-1000303777.jpg"
       },
       {
        "name": "Full Grilled chicken",
-       "desc": "Barbecue sauce OR buffalo sauce served with fries and salad",
        "price": "990.00",
-       "img": ""
+       "desc": "Barbecue sauce OR buffalo sauce served with fries and salad",
+       "img": "img/uploads/1789643115879-1000303776.jpg"
       }
      ]
     }
