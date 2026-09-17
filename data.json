@@ -412,15 +412,15 @@
      "items": [
       {
        "name": "Greek Salad",
-       "desc": "Lettuce , olives, cucumber, red onion, tomato, feta cheese, oregano, and greek dressing.",
        "price": "600.00",
-       "img": "img/cards/50_greeksalad.jpg"
+       "desc": "Lettuce , olives, cucumber, red onion, tomato, feta cheese, oregano, and greek dressing.",
+       "img": "img/uploads/1789642247478-1000303343.jpg"
       },
       {
        "name": "Rocca Salad",
-       "desc": "Rugula leaves, pomegranate seeds",
        "price": "470.00",
-       "img": "img/630e36958aa39415.img"
+       "desc": "Rugula leaves, pomegranate seeds",
+       "img": "img/uploads/1789642270212-1000303343.jpg"
       },
       {
        "name": "Crab Salad",
@@ -430,15 +430,15 @@
       },
       {
        "name": "Tuna Salad",
-       "desc": "Tuna, Lettuce, corn, egg, cucumber, black olives, green pepper, red radish cherry tomato and lemon oil dressing",
        "price": "600.00",
-       "img": "img/501aa699774eb9cb.img"
+       "desc": "Tuna, Lettuce, corn, egg, cucumber, black olives, green pepper, red radish cherry tomato and lemon oil dressing",
+       "img": "img/uploads/1789642295595-1000303341.jpg"
       },
       {
        "name": "Signature Salad",
-       "desc": "Grilled chicken, fuslilli pasta, tomato, cucumber, corn, olives, carrot, and lemon mayo dressing.",
        "price": "680.00",
-       "img": "img/04da7d173f033fb3.img"
+       "desc": "Grilled chicken, fuslilli pasta, tomato, cucumber, corn, olives, carrot, and lemon mayo dressing.",
+       "img": "img/uploads/1789642315840-1000303339.jpg"
       }
      ]
     }
@@ -500,9 +500,9 @@
       },
       {
        "name": "Beef Fries",
-       "desc": "French fries, beef, salsa, jalapeno and spicy mayo sauce.",
        "price": "590.00",
-       "img": "img/5488a5866babf8fc.img"
+       "desc": "French fries, beef, salsa, jalapeno and spicy mayo sauce.",
+       "img": "img/uploads/1789642344595-1000303397.jpg"
       },
       {
        "name": "Mix Appetizer",
@@ -518,9 +518,9 @@
       },
       {
        "name": "Cheddar Balls",
-       "desc": "Breaded cheddar balls served with salsa and classic sauce .",
        "price": "490.00",
-       "img": "img/cards/06_cheddarballs.jpg"
+       "desc": "Breaded cheddar balls served with salsa and classic sauce .",
+       "img": "img/uploads/1789642370221-1000303403.jpg"
       },
       {
        "name": "Chili Cheddar Balls",
@@ -542,9 +542,9 @@
       },
       {
        "name": "Nachos",
-       "desc": "Nachos topped with mixed cheese and jalapeno, guacamole salsa and sour cream.",
        "price": "490.00",
-       "img": "img/fa7a9f302f3f6e28.img"
+       "desc": "Nachos topped with mixed cheese and jalapeno, guacamole salsa and sour cream.",
+       "img": "img/uploads/1789642398182-1000303399.jpg"
       },
       {
        "name": "NACHOS BREAKFAST",
