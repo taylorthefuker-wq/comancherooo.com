@@ -14,7 +14,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --red:#ED2949; --red-deep:#a3162e; --gold:#c9a96a; --gold-dim:#8a7448;
+    --red:#ED2949; --red-deep:#a3162e; --gold:#f5f3ef; --gold-dim:#f5f3ef;
     --bg:#060504; --card:#121110; --card2:#191715; --text:#f5f3ef; --muted:#9c9488; --border:#262320;
     --serif:'Playfair Display',Georgia,serif; --sans:'Manrope','Segoe UI',system-ui,sans-serif;
   }
@@ -40,11 +40,17 @@
   .open-pill.closed .dot{background:var(--red);box-shadow:0 0 10px var(--red)}
   @keyframes blink{0%,100%{opacity:1}50%{opacity:.45}}
 
-  .hero h1{position:relative;font-family:var(--serif);font-weight:800;font-size:clamp(3rem,13vw,6.4rem);letter-spacing:.02em;margin-top:26px;line-height:1}
-  .hero h1 .accent{color:var(--gold);font-style:italic}
+  .hero h1{position:relative;font-family:var(--serif);font-weight:800;font-size:clamp(2.1rem,9vw,4.2rem);letter-spacing:.01em;margin-top:26px;line-height:1.05}
+  .hero h1 .accent{color:var(--red);font-style:italic}
   .hero .tag{margin-top:14px;color:var(--muted);font-size:clamp(.9rem,2.8vw,1.1rem);letter-spacing:.22em;text-transform:uppercase;font-weight:600}
   .hero .divider{margin:26px auto 0;width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 
+  .follow-row{display:flex;gap:10px;margin-top:26px;flex-wrap:wrap;justify-content:center}
+  .follow-btn{display:inline-flex;align-items:center;gap:9px;padding:11px 20px;border:1px solid var(--border);border-radius:999px;color:var(--text);font-weight:700;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;background:rgba(255,255,255,.03);transition:transform .2s,border-color .2s,background .2s,color .2s}
+  .follow-btn:hover{transform:translateY(-2px)}
+  .follow-btn.ig:hover{border-color:var(--red);background:rgba(230,57,82,.12)}
+  .follow-btn.fb:hover{border-color:var(--red);background:rgba(230,57,82,.12)}
+  .follow-btn svg{width:15px;height:15px;color:var(--red)}
   .cta-row{position:relative;display:flex;gap:12px;margin-top:38px;flex-wrap:wrap;justify-content:center}
   .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:800;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s,border-color .18s}
   .btn:active{transform:scale(.97)}
@@ -85,6 +91,16 @@
   <h1 class="fade-up d1">COMAN<span class="accent">CHERO</span></h1>
   <div class="tag fade-up d2" id="tagline">American Fastfood Restaurant & Grill House</div>
   <div class="divider fade-up d2"></div>
+  <div class="follow-row fade-up d3">
+    <a class="follow-btn ig" href="https://instagram.com/comanxero" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      <span data-i18n="followIg">Siga-nos no Instagram</span>
+    </a>
+    <a class="follow-btn fb" href="https://facebook.com/comanxeroo" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg>
+      <span data-i18n="followFb">Facebook</span>
+    </a>
+  </div>
   <div class="cta-row fade-up d3">
     <a class="btn btn-primary" href="/menu" id="cta-menu">Ver Menu <span class="arrow">→</span></a>
     <a class="btn btn-ghost" href="https://wa.me/258878473337" target="_blank" rel="noopener" id="cta-wa">WhatsApp</a>
@@ -119,12 +135,16 @@
 const HOURS = {0:[10,23],1:[10,23],2:[10,23],3:[10,23],4:[10,23],5:[10,23],6:[10,23]};
 
 const I18N = {
-  pt:{open:'Aberto agora', closed:'Fechado agora', menu:'Ver Menu', wa:'WhatsApp',
+  pt:{open:'Aberto agora', closed:'Fechado agora', menu:'Ver Menu', wa:'WhatsApp', followIg:'Siga-nos no Instagram', followFb:'Facebook',
       visit:'Visite-nos', hours:'Horário', order:'Pedidos', orderSub:'Peça pelo WhatsApp ou no balcão'},
-  en:{open:'Open now', closed:'Closed now', menu:'View Menu', wa:'WhatsApp',
+  en:{open:'Open now', closed:'Closed now', menu:'View Menu', wa:'WhatsApp', followIg:'Follow us on Instagram', followFb:'Facebook',
       visit:'Visit us', hours:'Hours', order:'Orders', orderSub:'Order on WhatsApp or at the counter'}
 };
-let LANG = (localStorage.getItem('cmx_lang') || 'pt');
+let LANG = localStorage.getItem('cmx_lang');
+if(!LANG){
+  const nl = (navigator.language || navigator.userLanguage || 'pt').toLowerCase();
+  LANG = nl.startsWith('pt') ? 'pt' : 'en';
+}
 
 function fmtH(h){ return String(h).padStart(2,'0') + ':00'; }
 function updateOpen(){
