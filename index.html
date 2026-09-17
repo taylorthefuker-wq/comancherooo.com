@@ -116,7 +116,6 @@
     <h1>COMAN<span>CHERO</span></h1>
     <div class="ornament">✦</div>
     <p>Big flavours. Open flame. Pure Americana in the heart of Maputo.</p>
-    <div class="loc" id="hero-loc"></div>
     <a class="btn" href="#menu">Explore the Menu</a>
   </div>
   <div class="scroll-hint">SCROLL</div>
@@ -125,7 +124,6 @@
 <header class="navbar">
   <div class="navbar-inner">
     <a class="logo" href="#top">COMAN<span>CHERO</span></a>
-    <span class="loc" id="loc"></span>
   </div>
   <div class="tabs" id="tabs"></div>
 </header>
@@ -140,16 +138,12 @@
   <div class="wm">COMAN<span>CHERO</span></div>
   <div class="hair"></div>
   American Fastfood Restaurant &amp; Grill House<br>
-  <span class="loc-f" id="loc-f"></span>
   <div class="social">comancherooo.com</div>
 </footer>
 
 <script>
 fetch('data.json?v=' + Date.now()).then(r=>r.json()).then(DATA=>{
-  document.getElementById('loc').textContent = '📍 ' + DATA.location;
-  document.getElementById('loc-f').textContent = DATA.location;
-  document.getElementById('hero-loc').textContent = '— ' + DATA.location.toUpperCase() + ' —';
-  document.getElementById('strip').textContent = '📍 ' + DATA.location + ' — visit us or order in person!';
+  document.getElementById('strip').textContent = 'Visit us or order in person!';
   const tabs = document.getElementById('tabs');
   const panels = document.getElementById('panels');
 
