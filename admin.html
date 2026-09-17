@@ -153,6 +153,7 @@
     <div class="grid2">
       <div><div class="lbl">Tagline</div><input class="field" id="s-tag" onchange="DATA.tagline=this.value;markDirty()"></div>
       <div><div class="lbl">Location</div><input class="field" id="s-loc" onchange="DATA.location=this.value;markDirty()"></div>
+      <div><div class="lbl">Like button link (opens when a customer taps ❤️ on an item)</div><input class="field" id="s-like" placeholder="https://www.instagram.com/comanxero/" onchange="DATA.social={like_url:this.value.trim()};markDirty()"></div>
     </div>
     <div class="lbl">Homepage hero image</div>
     <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
@@ -370,6 +371,7 @@ function render() {
   $("s-brand").value = DATA.brand || "";
   $("s-tag").value = DATA.tagline || "";
   $("s-loc").value = DATA.location || "";
+  $("s-like").value = (DATA.social && DATA.social.like_url) || "";
   $("hero-prev").src = "img/hero.jpg?v=" + Date.now();
   renderChips();
   renderMenu();

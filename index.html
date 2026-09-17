@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>COMANCHERO — American Fastfood Restaurant & Grill House</title>
-<meta name="description" content="COMANCHERO menu — burgers, sandwiches, platters, pizza, grills and drinks. Maputo.">
+<meta name="description" content="COMANCHERO — burgers, grills, pizza and more. Maputo Shopping Center.">
 <meta property="og:title" content="COMANCHERO">
 <meta property="og:description" content="American Fastfood Restaurant & Grill House">
 <meta property="og:image" content="img/hero.jpg">
@@ -14,189 +14,143 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,800;1,600&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --red:#E63952;
-    --red-deep:#b32236;
-    --gold:#c9a96a;
-    --gold-dim:#8a7448;
-    --bg:#0b0a08;
-    --card:#151310;
-    --card2:#1d1915;
-    --text:#f2efe9;
-    --muted:#a49c8e;
-    --border:#2a2620;
-    --serif:'Playfair Display',Georgia,serif;
-    --sans:'Manrope','Segoe UI',system-ui,sans-serif;
+    --red:#ED2949; --red-deep:#a3162e; --gold:#c9a96a; --gold-dim:#8a7448;
+    --bg:#060504; --card:#121110; --card2:#191715; --text:#f5f3ef; --muted:#9c9488; --border:#262320;
+    --serif:'Playfair Display',Georgia,serif; --sans:'Manrope','Segoe UI',system-ui,sans-serif;
   }
-  *{margin:0;padding:0;box-sizing:border-box}
+  *{margin:0;padding:0;box-sizing:border-box;max-width:100%}
   html{scroll-behavior:smooth}
-  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased}
-  img{display:block;max-width:100%}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);line-height:1.5;overflow-x:hidden}
+  ::selection{background:var(--red);color:#fff}
+  a{color:inherit;text-decoration:none}
+  img{display:block}
 
-  /* ---------- HERO ---------- */
-  .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;
-    background:radial-gradient(ellipse at 50% 35%,#1a1410 0%,var(--bg) 62%),var(--bg)}
-  .hero-inner{text-align:center;max-width:860px;padding:20px}
-  .kicker{color:var(--gold);letter-spacing:.42em;font-size:.72rem;font-weight:800;text-transform:uppercase}
-  .hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(3rem,10vw,6.8rem);letter-spacing:.02em;line-height:1.05;margin-top:18px;text-shadow:0 8px 40px rgba(0,0,0,.6)}
-  .hero h1 span{color:var(--red)}
-  .ornament{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:22px;color:var(--gold)}
-  .ornament::before,.ornament::after{content:"";height:1px;width:clamp(40px,12vw,120px);background:linear-gradient(90deg,transparent,var(--gold));}
-  .ornament::after{background:linear-gradient(90deg,var(--gold),transparent)}
-  .hero p{margin-top:20px;font-size:clamp(.95rem,2.4vw,1.15rem);color:#e8e2d6;font-weight:600}
-  .hero .loc{margin-top:10px;color:var(--gold);font-size:.82rem;letter-spacing:.18em;font-weight:600}
-  .btn{display:inline-block;margin-top:30px;background:var(--red);color:#fff;font-family:var(--sans);font-weight:800;letter-spacing:.22em;padding:16px 46px;border-radius:2px;font-size:.82rem;border:none;cursor:pointer;text-decoration:none;text-transform:uppercase;transition:transform .18s,box-shadow .18s,background .18s}
-  .btn:hover{transform:translateY(-2px);background:var(--red-deep);box-shadow:0 16px 40px rgba(230,57,82,.35)}
-  .scroll-hint{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:var(--gold);opacity:.85;font-size:.66rem;letter-spacing:.34em;font-weight:600;animation:bob 1.8s infinite ease-in-out}
-  @keyframes bob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,9px)}}
+  /* HERO */
+  .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:26px 20px;overflow:hidden}
+  .hero::before{content:'';position:absolute;inset:0;background:
+    radial-gradient(ellipse 70% 50% at 50% 18%, rgba(201,169,106,.14), transparent 70%),
+    radial-gradient(ellipse 90% 60% at 50% 110%, rgba(230,57,82,.12), transparent 70%);
+    pointer-events:none}
+  .glow-ring{position:absolute;left:50%;top:38%;transform:translate(-50%,-50%);width:min(84vw,560px);aspect-ratio:1;border-radius:50%;border:1px solid rgba(201,169,106,.16);pointer-events:none;animation:pulse 6s ease-in-out infinite}
+  .glow-ring::after{content:'';position:absolute;inset:34px;border-radius:50%;border:1px solid rgba(230,57,82,.14)}
+  @keyframes pulse{0%,100%{transform:translate(-50%,-50%) scale(1)}50%{transform:translate(-50%,-50%) scale(1.045)}}
 
-  /* ---------- NAV ---------- */
-  .navbar{position:sticky;top:0;z-index:50;background:rgba(11,10,8,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-  .navbar-inner{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:14px 18px}
-  .navbar .logo{color:var(--text);font-family:var(--serif);font-weight:800;font-size:1.2rem;letter-spacing:.06em;text-decoration:none}
-  .navbar .logo span{color:var(--red)}
-  .navbar .loc{color:var(--gold);font-size:.78rem;letter-spacing:.14em;font-weight:600}
-  .tabs{display:flex;gap:4px;overflow-x:auto;padding:0 12px 14px;max-width:1100px;margin:0 auto;scrollbar-width:none;border-top:1px solid rgba(201,169,106,.12)}
-  .tabs::-webkit-scrollbar{display:none}
-  .tab{flex:0 0 auto;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:var(--sans);font-weight:600;font-size:.82rem;letter-spacing:.06em;padding:9px 15px;cursor:pointer;white-space:nowrap;transition:color .15s,border-color .15s}
-  .tab:hover{color:var(--gold)}
-  .tab.active{color:var(--text);border-bottom-color:var(--red)}
+  .open-pill{position:relative;display:inline-flex;align-items:center;gap:8px;border:1px solid var(--border);background:rgba(21,19,16,.7);backdrop-filter:blur(6px);border-radius:999px;padding:8px 16px;font-size:.72rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .open-pill .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 10px #3ddc84;animation:blink 2.2s infinite}
+  .open-pill.closed .dot{background:var(--red);box-shadow:0 0 10px var(--red)}
+  @keyframes blink{0%,100%{opacity:1}50%{opacity:.45}}
 
-  /* ---------- MENU ---------- */
-  .menu-wrap{max-width:1100px;margin:0 auto;padding:48px 18px 70px}
-  .menu-head{text-align:center;margin-bottom:10px}
-  .menu-head .small{color:var(--gold);letter-spacing:.4em;font-size:.68rem;font-weight:800;text-transform:uppercase}
-  .menu-head h2{font-family:var(--serif);font-size:clamp(2rem,6vw,3.2rem);font-weight:800;margin-top:10px}
-  .section-title{display:flex;align-items:center;gap:18px;margin:46px 0 20px;color:var(--gold);font-size:.78rem;letter-spacing:.3em;font-weight:800;text-transform:uppercase;white-space:nowrap}
-  .section-title::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--gold-dim),transparent)}
-  .section-title span{font-family:var(--serif);font-style:italic;font-weight:600;font-size:1.1rem;letter-spacing:.04em;text-transform:none;color:var(--gold)}
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px}
-  .item{background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:transform .2s,border-color .2s,box-shadow .2s}
-  .item:hover{transform:translateY(-4px);border-color:var(--gold-dim);box-shadow:0 18px 44px rgba(0,0,0,.5)}
-  .item .ph{aspect-ratio:4/3;overflow:hidden;background:var(--card2)}
-  .item .ph img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
-  .item:hover .ph img{transform:scale(1.06)}
-  .item .body{padding:18px 20px 20px}
-  .item .row{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
-  .item h3{font-family:var(--serif);font-size:1.12rem;font-weight:800;letter-spacing:.01em}
-  .item .price{color:var(--red);font-weight:800;font-size:1.02rem;white-space:nowrap}
-  .item .price small{font-size:.68em;font-weight:800;color:var(--gold);letter-spacing:.08em;margin-right:2px}
-  .item .desc{margin-top:9px;color:var(--muted);font-size:.85rem;line-height:1.5}
-  .noimg{display:flex;align-items:center;justify-content:center;background:var(--card2);color:#4a433a;font-family:var(--serif);font-weight:800;font-size:2.2rem;height:100%}
+  .hero h1{position:relative;font-family:var(--serif);font-weight:800;font-size:clamp(3rem,13vw,6.4rem);letter-spacing:.02em;margin-top:26px;line-height:1}
+  .hero h1 .accent{color:var(--gold);font-style:italic}
+  .hero .tag{margin-top:14px;color:var(--muted);font-size:clamp(.9rem,2.8vw,1.1rem);letter-spacing:.22em;text-transform:uppercase;font-weight:600}
+  .hero .divider{margin:26px auto 0;width:120px;height:1px;background:linear-gradient(90deg,transparent,var(--gold),transparent)}
 
-  .menu-panel{display:none}
-  .menu-panel.active{display:block}
-  .empty-note{text-align:center;color:var(--muted);font-family:var(--serif);font-style:italic;font-size:1.05rem;padding:50px 10px}
+  .cta-row{position:relative;display:flex;gap:12px;margin-top:38px;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:15px 30px;border-radius:999px;font-weight:800;font-size:.92rem;letter-spacing:.06em;text-transform:uppercase;border:1px solid transparent;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s,border-color .18s}
+  .btn:active{transform:scale(.97)}
+  .btn-primary{background:var(--red);color:#fff;box-shadow:0 10px 30px rgba(230,57,82,.28)}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(230,57,82,.4)}
+  .btn-ghost{border-color:var(--border);color:var(--text);background:rgba(21,19,16,.5);backdrop-filter:blur(6px)}
+  .btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+  .btn .arrow{transition:transform .18s}
+  .btn:hover .arrow{transform:translateX(4px)}
 
-  /* reveal animation */
-  .reveal{opacity:0;transform:translateY(16px);transition:opacity .55s ease,transform .55s ease}
-  .reveal.in{opacity:1;transform:none}
+  /* INFO STRIP */
+  .strip{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card)}
+  .strip-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
+  .cell{background:var(--card);padding:26px 18px;text-align:center;transition:background .2s}
+  .cell:hover{background:var(--card2)}
+  .cell .ic{font-size:1.3rem;margin-bottom:8px}
+  .cell .l1{font-size:.7rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:800}
+  .cell .l2{font-size:.88rem;color:var(--muted);margin-top:4px}
 
-  /* ---------- STRIP & FOOTER ---------- */
-  .order-strip{background:linear-gradient(120deg,var(--red-deep),var(--red));color:#fff;text-align:center;font-weight:600;letter-spacing:.06em;padding:18px;font-size:.92rem}
-  footer{border-top:1px solid var(--border);padding:36px 18px;text-align:center;color:var(--muted);font-size:.85rem}
-  footer .wm{font-family:var(--serif);font-weight:800;font-size:1.3rem;color:var(--text);letter-spacing:.06em}
-  footer .wm span{color:var(--red)}
-  footer .hair{width:70px;height:1px;background:var(--gold);margin:16px auto}
-  footer .social{margin-top:8px}
-  footer a{color:var(--gold);text-decoration:none;font-weight:700;letter-spacing:.06em}
-  footer .loc-f{color:var(--muted)}
+  /* FOOTER */
+  footer{padding:44px 20px 60px;text-align:center}
+  .socials{display:flex;gap:14px;justify-content:center;margin-bottom:22px}
+  .soc{width:42px;height:42px;border-radius:50%;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--muted);transition:all .2s}
+  .soc:hover{border-color:var(--red);color:#fff;transform:translateY(-3px);background:rgba(230,57,82,.12)}
+  .fine{color:#5c554a;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase}
 
-  @media(max-width:560px){
-    .grid{grid-template-columns:1fr}
-    .navbar .loc{display:none}
-    .menu-wrap{padding-top:34px}
-  }
+  .fade-up{opacity:0;transform:translateY(18px);animation:fadeUp .9s ease forwards}
+  .d1{animation-delay:.1s}.d2{animation-delay:.25s}.d3{animation-delay:.4s}.d4{animation-delay:.55s}
+  @keyframes fadeUp{to{opacity:1;transform:none}}
+  @media(max-width:640px){ .strip-inner{grid-template-columns:1fr} .cell{padding:20px} }
 </style>
 </head>
 <body>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="kicker">American Fastfood · Restaurant &amp; Grill House</div>
-    <h1>COMAN<span>CHERO</span></h1>
-    <div class="ornament">✦</div>
-    <p>Big flavours. Open flame. Pure Americana in the heart of Maputo.</p>
-    <a class="btn" href="#menu">Explore the Menu</a>
+<section class="hero" id="top">
+  <div class="glow-ring"></div>
+  <div class="open-pill fade-up" id="open-pill"><span class="dot"></span><span id="open-label">…</span></div>
+  <h1 class="fade-up d1">COMAN<span class="accent">CHERO</span></h1>
+  <div class="tag fade-up d2" id="tagline">American Fastfood Restaurant & Grill House</div>
+  <div class="divider fade-up d2"></div>
+  <div class="cta-row fade-up d3">
+    <a class="btn btn-primary" href="/menu" id="cta-menu">Ver Menu <span class="arrow">→</span></a>
+    <a class="btn btn-ghost" href="https://wa.me/258878473337" target="_blank" rel="noopener" id="cta-wa">WhatsApp</a>
   </div>
-  <div class="scroll-hint">SCROLL</div>
 </section>
 
-<header class="navbar">
-  <div class="navbar-inner">
-    <a class="logo" href="#top">COMAN<span>CHERO</span></a>
+<div class="strip fade-up d4">
+  <div class="strip-inner">
+    <div class="cell"><div class="l1" data-i18n="visit">Visite-nos</div><div class="l2" id="loc">Maputo Shopping Center</div></div>
+    <div class="cell"><div class="l1" data-i18n="hours">Horário</div><div class="l2" id="hours">10:00 – 23:00</div></div>
+    <div class="cell"><div class="l1" data-i18n="order">Pedidos</div><div class="l2" data-i18n="orderSub">Peça pelo WhatsApp ou no balcão</div></div>
   </div>
-  <div class="tabs" id="tabs"></div>
-</header>
-
-<section id="menu">
-  <div class="menu-wrap" id="panels"></div>
-</section>
-
-<div class="order-strip" id="strip">📍 Visit us or order in person!</div>
+</div>
 
 <footer>
-  <div class="wm">COMAN<span>CHERO</span></div>
-  <div class="hair"></div>
-  American Fastfood Restaurant &amp; Grill House<br>
-  <div class="social">comancherooo.com</div>
+  <div class="socials">
+    <a class="soc" href="https://instagram.com/comanxero" target="_blank" rel="noopener" aria-label="Instagram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+    </a>
+    <a class="soc" href="https://facebook.com/comanxeroo" target="_blank" rel="noopener" aria-label="Facebook">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M14 8h3V5h-3c-2.2 0-4 1.8-4 4v2H7v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg>
+    </a>
+    <a class="soc" href="https://wa.me/258878473337" target="_blank" rel="noopener" aria-label="WhatsApp">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2zm5.3 14.1c-.2.6-1.2 1.2-1.7 1.2-.5.1-1 .1-1.7-.1-.4-.1-.9-.3-1.6-.6-2.8-1.2-4.7-4-4.8-4.2-.1-.2-1.2-1.5-1.2-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5s.7 1.8.8 1.9c.1.1.1.3 0 .5-.1.2-.1.3-.3.5l-.4.5c-.1.1-.3.3-.1.6.2.3.9 1.4 1.9 2.3 1.3 1.1 2.4 1.5 2.7 1.6.3.1.5.1.7-.1.2-.2.8-1 .1-1.1-.6-.2 0-.4.1-.5.1-.2.9-.2 1.2-.2.3 0 .6 0 .8.4.2.3.7 1.1.6 1.3z"/></svg>
+    </a>
+  </div>
+  <div class="fine">© COMANCHERO · Maputo</div>
 </footer>
 
 <script>
-fetch('data.json?v=' + Date.now()).then(r=>r.json()).then(DATA=>{
-  document.getElementById('strip').textContent = 'Visit us or order in person!';
-  const tabs = document.getElementById('tabs');
-  const panels = document.getElementById('panels');
+/* ---- HOURS (edit here: 0=Sun … 6=Sat, [open, close] in 24h Maputo time) ---- */
+const HOURS = {0:[10,23],1:[10,23],2:[10,23],3:[10,23],4:[10,23],5:[10,23],6:[10,23]};
 
-  const fmtPrice = p => String(p||'').replace(/\.00$/,'');
+const I18N = {
+  pt:{open:'Aberto agora', closed:'Fechado agora', menu:'Ver Menu', wa:'WhatsApp',
+      visit:'Visite-nos', hours:'Horário', order:'Pedidos', orderSub:'Peça pelo WhatsApp ou no balcão'},
+  en:{open:'Open now', closed:'Closed now', menu:'View Menu', wa:'WhatsApp',
+      visit:'Visit us', hours:'Hours', order:'Orders', orderSub:'Order on WhatsApp or at the counter'}
+};
+let LANG = (localStorage.getItem('cmx_lang') || 'pt');
 
-  DATA.menus.forEach((menu, mi)=>{
-    const t = document.createElement('button');
-    t.className = 'tab' + (mi===0?' active':'');
-    t.textContent = menu.name;
-    t.onclick = ()=>{
-      document.querySelectorAll('.tab').forEach(x=>x.classList.remove('active'));
-      document.querySelectorAll('.menu-panel').forEach(x=>x.classList.remove('active'));
-      t.classList.add('active');
-      document.getElementById('p-'+menu.slug).classList.add('active');
-      requestAnimationFrame(observePanels);
-    };
-    tabs.appendChild(t);
-
-    const p = document.createElement('div');
-    p.className = 'menu-panel' + (mi===0?' active':'');
-    p.id = 'p-'+menu.slug;
-    let html = `<div class="menu-head reveal"><div class="small">The Menu</div><h2>${menu.name.toUpperCase()}</h2></div>`;
-    if(!menu.sections.length){
-      html += `<div class="empty-note">Coming soon…</div>`;
-    }
-    menu.sections.forEach(sec=>{
-      html += `<h3 class="section-title reveal"><span>${sec.name}</span></h3><div class="grid">`;
-      sec.items.forEach(it=>{
-        const img = it.img ? `<img src="${it.img}" alt="${it.name}" loading="lazy">` : `<div class="noimg">C</div>`;
-        const price = it.price ? `<span class="price"><small>MT</small>${fmtPrice(it.price)}</span>` : '';
-        const desc = it.desc ? `<p class="desc">${it.desc}</p>` : '';
-        html += `<article class="item reveal">
-          <div class="ph">${img}</div>
-          <div class="body">
-            <div class="row"><h3>${it.name}</h3>${price}</div>
-            ${desc}
-          </div>
-        </article>`;
-      });
-      html += `</div>`;
-    });
-    p.innerHTML = html;
-    panels.appendChild(p);
+function fmtH(h){ return String(h).padStart(2,'0') + ':00'; }
+function updateOpen(){
+  const now = new Date(new Date().toLocaleString('en-US',{timeZone:'Africa/Maputo'}));
+  const [o,c] = HOURS[now.getDay()];
+  const hr = now.getHours();
+  const isOpen = hr >= o && hr < c;
+  const pill = document.getElementById('open-pill');
+  const t = I18N[LANG];
+  pill.classList.toggle('closed', !isOpen);
+  document.getElementById('open-label').textContent = isOpen ? t.open : t.closed;
+  document.getElementById('hours').textContent = fmtH(o) + ' – ' + fmtH(c);
+}
+function applyLang(){
+  const t = I18N[LANG];
+  document.getElementById('cta-menu').innerHTML = t.menu + ' <span class="arrow">→</span>';
+  document.getElementById('cta-wa').textContent = t.wa;
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    el.textContent = t[el.dataset.i18n] || el.textContent;
   });
-
-  const io = new IntersectionObserver(es=>{
-    es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
-  },{threshold:.08});
-  function observePanels(){
-    document.querySelectorAll('.menu-panel.active .reveal:not(.in)').forEach(el=>io.observe(el));
-  }
-  observePanels();
-});
+  document.documentElement.lang = LANG;
+  updateOpen();
+}
+/* language auto-detect: PT default, EN if browser is English-only */
+applyLang();
+setInterval(updateOpen, 60000);
 </script>
 </body>
 </html>
