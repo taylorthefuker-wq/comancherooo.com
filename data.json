@@ -389,38 +389,15 @@
      "items": [
       {
        "name": "Mac Vege",
-       "desc": "MACRONI WITH MIX CHEESE, MUSHROOMS, BROCCOLI, AND JALAPENO.",
        "price": "550.00",
-       "img": "img/4ab4b0df01378ade.img"
+       "desc": "MACRONI WITH MIX CHEESE, MUSHROOMS, BROCCOLI, AND JALAPENO.",
+       "img": "img/uploads/1789642181098-1000303657.jpg"
       },
       {
        "name": "Mac Chicken",
-       "desc": "MACARONI WITH MIX CHEESE, CHICKEN BREAST CRUNCHY",
        "price": "620.00",
-       "img": "img/6cce45fdd01ad73c.img"
-      }
-     ]
-    },
-    {
-     "name": "Pasta",
-     "items": [
-      {
-       "name": "Penne Pasta",
-       "desc": "Pasta, cherry tomatoes, oregano and parmeson cheese",
-       "price": "600.00",
-       "img": "img/777a3a6e290c5df1.img"
-      },
-      {
-       "name": "Alfredo Pasta",
-       "desc": "PASTA COOKED IN OUR CREAMIY WHITE\nSAUCE, CHICKEN BREAST\nAND MUSHROOMS, WITH PARMESAN CHEESE.",
-       "price": "700.00",
-       "img": "img/be8be7444eca14fc.img"
-      },
-      {
-       "name": "Pesto Pasta",
-       "desc": "FUSILI PASTA, CHICKEN, WITH FRESH CREAM, HOMEMADE PESTO SAUCE, BASIL",
-       "price": "800.00",
-       "img": "img/73114112d78da800.img"
+       "desc": "MACARONI WITH MIX CHEESE, CHICKEN BREAST CRUNCHY",
+       "img": "img/uploads/1789642145085-1000303318.jpg"
       }
      ]
     }
