@@ -239,6 +239,600 @@
 /* ---- HOURS (edit here: 0=Sun … 6=Sat, [open, close] Maputo time) ---- */
 const HOURS = {0:[10,23],1:[10,23],2:[10,23],3:[10,23],4:[10,23],5:[10,23],6:[10,23]};
 
+/* ---- item translations (key: original text, whitespace-collapsed) ---- */
+const TX = {
+"Beef Burgers": {
+"pt": "Burgers de Carne"
+},
+"Chicken Burger": {
+"pt": "Burger de Frango"
+},
+"Sandwiches": {
+"pt": "Sanduíches"
+},
+"GRILL KEBAB": {
+"pt": "GRELHADOS & KEBAB"
+},
+"Platters": {
+"pt": "Pratos Grelhados"
+},
+"Pizza & Grilled chicken": {
+"pt": "Pizza & Frango Grelhado"
+},
+"Pasta & Macaroni": {
+"pt": "Massa & Macarrão"
+},
+"Salads": {
+"pt": "Saladas"
+},
+"Appetizers & Breakfast": {
+"pt": "Entradas & Pequenos-Almoços"
+},
+"Drinks": {
+"pt": "Bebidas"
+},
+"Healthy (Coming Soon)": {
+"pt": "Saudável (Brevemente)"
+},
+"JUICY Beef Burgers": {
+"pt": "Burgers de Carne Suculentos"
+},
+"Juicy Chicken Burger": {
+"pt": "Burgers de Frango Suculentos"
+},
+"Grill plates": {
+"pt": "Pratos de Grelhados"
+},
+"Platter": {
+"pt": "Tábuas de Grelhados"
+},
+"Grilled Chicken": {
+"pt": "Frango Grelhado"
+},
+"Macaroni": {
+"pt": "Macarrão"
+},
+"Pasta": {
+"pt": "Massa"
+},
+"Appetizers": {
+"pt": "Entradas"
+},
+"Fresh Juice": {
+"pt": "Sumos Naturais"
+},
+"Iced Drinks": {
+"pt": "Bebidas Geladas"
+},
+"Sumos & Refrijerantes": {
+"pt": "Sumos & Refrigerantes",
+"en": "Juices & Soft Drinks"
+},
+"1 ADANA KEBAP": {
+"pt": "1 Kebap Adana"
+},
+"1 Carne": {
+"en": "1 Beef Skewer"
+},
+"1 URFA KEBAP": {
+"pt": "1 Kebap Urfa"
+},
+"1/2 Grilled chicken": {
+"pt": "1/2 Frango Grelhado",
+"en": "1/2 Grilled Chicken"
+},
+"2 ESPETADAS": {
+"en": "2 SKEWERS"
+},
+"3 ESPETADAS": {
+"en": "3 SKEWERS"
+},
+"Alfredo Pasta": {
+"pt": "Pasta Alfredo"
+},
+"BBQ Crispy burger": {
+"pt": "Burger Crispy BBQ"
+},
+"Beef Fries": {
+"pt": "Fries com Carne"
+},
+"CHEESE OMELETTE": {
+"pt": "OMELETE DE QUEIJO"
+},
+"Caipirinha Classica": {
+"pt": "Caipirinha Clássica",
+"en": "Classic Caipirinha"
+},
+"Caipirinha Maca": {
+"pt": "Caipirinha de Maçã",
+"en": "Apple Caipirinha"
+},
+"Caipirinha Maracuja": {
+"pt": "Caipirinha de Maracujá",
+"en": "Passion Fruit Caipirinha"
+},
+"Caipirinha Morango": {
+"pt": "Caipirinha de Morango",
+"en": "Strawberry Caipirinha"
+},
+"Caramel Machiato": {
+"pt": "Machiato de Caramelo",
+"en": "Caramel Macchiato"
+},
+"Carnero no forno": {
+"pt": "Carneiro no Forno",
+"en": "Roasted Lamb"
+},
+"Cheddar Balls": {
+"pt": "Bolas de Cheddar"
+},
+"Cheese Garlic Bread": {
+"pt": "Pão de Alho com Queijo"
+},
+"Chicken Abacate": {
+"pt": "Frango com Abacate",
+"en": "Chicken Avocado"
+},
+"Chicken Curry": {
+"pt": "Frango ao Curry"
+},
+"Chicken Filet": {
+"pt": "Filete de Frango"
+},
+"Chicken Vege": {
+"pt": "Frango Vege"
+},
+"Chili Cheddar Balls": {
+"pt": "Bolas de Cheddar com Chili"
+},
+"Classic Burger": {
+"pt": "Burger Clássico"
+},
+"Classic Chicken Burger": {
+"pt": "Burger de Frango Clássico"
+},
+"Comanchero Beef Burger": {
+"pt": "Burger de Carne Comanchero"
+},
+"Comanchero Chicken Burger": {
+"pt": "Burger de Frango Comanchero"
+},
+"Combo 1p single": {
+"pt": "Combo 1p Individual",
+"en": "Combo 1p Single"
+},
+"Combo 2p couple": {
+"pt": "Combo 2p Casal",
+"en": "Combo 2p Couple"
+},
+"Combo 4p Family": {
+"pt": "Combo 4p Família"
+},
+"Crab Salad": {
+"pt": "Salada de Caranguejo"
+},
+"Crispy Chicken Rice": {
+"pt": "Arroz com Frango Crispy"
+},
+"Crispy Strips": {
+"pt": "Tiras Crispy"
+},
+"Crunchy Wrap": {
+"pt": "Wrap Crunchy"
+},
+"Duplo Patty Burger": {
+"pt": "Burger Duplo"
+},
+"Egg'Drama Burger": {
+"pt": "Burger Egg'Drama"
+},
+"Fajita Chicken": {
+"pt": "Fajita de Frango"
+},
+"Fajita Sandwich": {
+"pt": "Sanduíche Fajita"
+},
+"Fillet Steak": {
+"pt": "Filé Grelhado"
+},
+"Fried Chicken Wings": {
+"pt": "Asas de Frango Fritas"
+},
+"Full Grilled chicken": {
+"pt": "Frango Grelhado Completo",
+"en": "Full Grilled Chicken"
+},
+"GRILLED CARNERO": {
+"pt": "CARNEIRO GRELHADO",
+"en": "GRILLED LAMB"
+},
+"Greek Salad": {
+"pt": "Salada Grega"
+},
+"Grilled Chicken Wings": {
+"pt": "Asas de Frango Grelhadas"
+},
+"Iced Fruits Juice": {
+"pt": "Sumo de Frutas Gelado"
+},
+"Kids Meal Burger": {
+"pt": "Burger Kids"
+},
+"Lemonade": {
+"pt": "Limonada"
+},
+"Mac Chicken": {
+"pt": "Mac de Frango"
+},
+"Maestro Chicken Burger": {
+"pt": "Burger de Frango Maestro"
+},
+"Mango": {
+"pt": "Manga"
+},
+"Maputo Beef Burger": {
+"pt": "Burger de Carne Maputo"
+},
+"Maputo Chicken Burger": {
+"pt": "Burger de Frango Maputo"
+},
+"MilkShake": {
+"pt": "Milkshake"
+},
+"MilkShake Caramel": {
+"pt": "Milkshake de Caramelo"
+},
+"MilkShake Strawberry": {
+"pt": "Milkshake de Morango"
+},
+"Minted Lemonade": {
+"pt": "Limonada com Menta"
+},
+"Mirtilo": {
+"en": "Blueberry"
+},
+"Mix Appetizer": {
+"pt": "Entrada Mista"
+},
+"Mixed Juice": {
+"pt": "Sumo Misto"
+},
+"Mozzarella sticks": {
+"pt": "Sticks de Mozzarella"
+},
+"NACHOS BREAKFAST": {
+"pt": "NACHOS DE PEQUENO-ALMOÇO",
+"en": "BREAKFAST NACHOS"
+},
+"Orange": {
+"pt": "Laranja"
+},
+"PICANHA GRILLS": {
+"pt": "PICANHA NA GRELHA",
+"en": "GRILLED PICANHA"
+},
+"PREGO NO PAO (LOMBO)": {
+"en": "STEAK SANDWICH (SIRLOIN)"
+},
+"PREGO NO PRATO": {
+"en": "STEAK ON PLATE"
+},
+"Penne Pasta": {
+"pt": "Pasta Penne"
+},
+"Pesto Pasta": {
+"pt": "Pasta Pesto"
+},
+"Pineapple": {
+"pt": "Ananás"
+},
+"Pizza Fajita Beef": {
+"pt": "Pizza Fajita de Carne"
+},
+"Pizza Fajita chicken": {
+"pt": "Pizza Fajita de Frango"
+},
+"Pizza atum Large": {
+"pt": "Pizza de Atum Grande",
+"en": "Tuna Pizza Large"
+},
+"Pizza vegetariana": {
+"en": "Vegetarian Pizza"
+},
+"Quessadillas": {
+"pt": "Quesadillas"
+},
+"Refresco 1L": {
+"en": "Soft Drink 1L"
+},
+"Refresco 2L": {
+"en": "Soft Drink 2L"
+},
+"Rocca Salad": {
+"pt": "Salada de Rúcula",
+"en": "Arugula (Rocca) Salad"
+},
+"Signature Salad": {
+"pt": "Salada Signature"
+},
+"Special Hotdog": {
+"pt": "Hotdog Especial"
+},
+"Steak & Fries": {
+"pt": "Bife com Batata Frita"
+},
+"Steak Sandwich": {
+"pt": "Sanduíche de Bife"
+},
+"Steak Vege": {
+"pt": "Bife Vege"
+},
+"Strawberry Daiquiri": {
+"pt": "Daiquiri de Morango"
+},
+"Strawberry minted lemonade": {
+"pt": "Limonada de Morango com Menta"
+},
+"Sumo Compal 1000ML": {
+"en": "Compal Juice 1000ML"
+},
+"Sumo Compal 500ML": {
+"en": "Compal Juice 500ML"
+},
+"Tuna Salad": {
+"pt": "Salada de Atum"
+},
+"Virgin Lagon": {
+"pt": "Virgin Lagoon",
+"en": "Virgin Lagoon"
+},
+"Virgin Pinacolada": {
+"pt": "Virgin Piña Colada"
+},
+"WHOLE GRILLED LAMP": {
+"pt": "CARNEIRO GRELHADO INTEIRO",
+"en": "WHOLE GRILLED LAMB"
+},
+"Watermelon": {
+"pt": "Melancia"
+},
+"sandwich and a salad": {
+"pt": "Sanduíche e Salada",
+"en": "Sandwich and a Salad"
+},
+"1Penny Pasta + 2 Mini Burger + 2 Fries + 1L coca cola": {
+"en": "1 Penne Pasta + 2 Mini Burgers + 2 Fries + 1L Coca Cola",
+"pt": "1 Pasta Penne + 2 Mini Burgers + 2 Fries + 1L Coca-Cola"
+},
+"2 Mini Burgers, served with fries. Chicken or Beef": {
+"pt": "2 Mini Burgers, servidos com batata frita. Frango ou Carne"
+},
+"2-PERSON": {
+"pt": "2 PESSOAS",
+"en": "2 PEOPLE"
+},
+"4 Classic Burger + Fries + 2L Coca Cola": {
+"pt": "4 Burgers Clássicos + Batata Frita + 2L Coca-Cola"
+},
+"A basket of golden crispy breaded mozzarella sticks served with salsa and classic sauce.": {
+"pt": "Cesto de sticks de mozzarella dourados e crispy, servidos com salsa e molho clássico."
+},
+"AJUICY SLICED GRILLED STEAK, GREEN PEPPER,, ONION, MOZZARELLA CHEESE AND MAYO SAUCE": {
+"en": "Juicy sliced grilled steak, green pepper, onion, mozzarella cheese and mayo sauce",
+"pt": "Bife grelhado suculento às fatias, pimenta verde, cebola, queijo mozzarella e maionese"
+},
+"Atum azeitona cebola": {
+"pt": "Atum, azeitona, cebola",
+"en": "Tuna, olives, onion"
+},
+"BEEF HOTDOG, MUSTARD, MAYO, JALAPENO, AND EXTRA CHIPS TORTILLAS": {
+"pt": "Cachorro-quente de carne, mostarda, maionese, jalapeños e tortilla chips extra"
+},
+"BEEF PATTY, FRIED EGG, CHEDDAR SLICE, ONION RINGS WITH BBQ AND A IOLI SAUCE": {
+"pt": "Carne de vaca, ovo frito, fatia de cheddar, onion rings com molho BBQ e aioli"
+},
+"BEEF PATTY, CHEDDAR PATTY, LETTUCE, DILL PICKLES, JALAPENOS & CLASSIC SAUCE": {
+"pt": "Carne de vaca, cheddar, alface, pickles, jalapeños e molho clássico"
+},
+"BEEF PATTY, LETTUCE, TOMATOES, REDONIONS, DILL PICKLES ,AND CLASSIC SAUCE.": {
+"pt": "Carne de vaca, alface, tomate, cebola roxa, pickles e molho clássico"
+},
+"BEEF PATTY, TORTILLA CHIPS, GUACAMOLE, SALSA, Lettuce, CHEDDAR CHEESE SLICE AND JALAPENOS.": {
+"pt": "Carne de vaca, tortilla chips, guacamole, salsa, alface, cheddar e jalapeños"
+},
+"Barbecue sauce OR buffalo sauce served with fries and salad": {
+"pt": "Molho barbecue ou molho buffalo, servido com batata frita e salada"
+},
+"Beef a Comanchero com mix cheese jalapeno": {
+"pt": "Carne à Comanchero com mix de queijos e jalapeño",
+"en": "Beef Comanchero-style with cheese mix and jalapeño"
+},
+"Bife cebola pimenta cogumelos": {
+"pt": "Bife, cebola, pimenta, cogumelos",
+"en": "Beef, onion, pepper, mushrooms"
+},
+"Breaded cheddar balls served with salsa and classic sauce .": {
+"pt": "Bolas de cheddar empanadas, servidas com salsa e molho clássico",
+"en": "Breaded cheddar balls served with salsa and classic sauce."
+},
+"Breaded chili cheddar balls served with salsa and classic sauce .": {
+"pt": "Bolas de cheddar picantes empanadas, servidas com salsa e molho clássico",
+"en": "Breaded chili cheddar balls served with salsa and classic sauce."
+},
+"CHICKEN BREAST WITH ROCKET, SLICED AVOCADO, RED RADISH, AND PICKLES, AIOLI SAUCE": {
+"pt": "Peito de frango com rúcula, abacate fatiado, rabanete e pickles, molho aioli"
+},
+"CHICKEN QUESADILLAS, PEPPERS, ONION, CHEDDAR CHEESE SLICES GUACAMOLE, SOUR CREAM, SALSA": {
+"pt": "Quesadillas de frango, pimentos, cebola, cheddar, guacamole, sour cream e salsa"
+},
+"CHICKENBREASTWITHSPICY MEXICAN RICE AND VEGETABLE, MUSHROOM SAUCE": {
+"en": "Chicken breast with spicy Mexican rice and vegetables, mushroom sauce",
+"pt": "Peito de frango com arroz mexicano picante e legumes, molho de cogumelos"
+},
+"CRISPY CHICKEN BREAST, WITH SPICY MEXICAN RICE, SPECIAL SAUCE ON TOP, GARDEN SALAD ASIDE": {
+"pt": "Peito de frango crispy com arroz mexicano picante, molho especial por cima e salada à parte"
+},
+"CRISPY CHICKEN STRIPS WITH FRENCH FRIES, COLESLAW. SAUCE ASIDE": {
+"pt": "Tiras de frango crispy com batata frita e coleslaw. Molho à parte"
+},
+"Cheese Beef a Comanchero": {
+"pt": "Carne com queijo à Comanchero",
+"en": "Cheese beef, Comanchero-style"
+},
+"Chicken breast, lettuce, jalapeno, mozzarella cheese patty, pickles and classic sauce.": {
+"pt": "Peito de frango, alface, jalapeño, mozzarella, pickles e molho clássico"
+},
+"Classic Burger + Fries + Coca Cola": {
+"pt": "Burger Clássico + Batata Frita + Coca-Cola"
+},
+"Classic Chicken Burger is a delicious meal that can be enjoyed for lunch or dinner. It consists of a juicy chicken breast served with lettuce, onion, tomato, pickles and a our sauce.": {
+"en": "A delicious meal for lunch or dinner — juicy chicken breast with lettuce, onion, tomato, pickles and our sauce.",
+"pt": "Refeição deliciosa para almoço ou jantar — peito de frango suculento com alface, cebola, tomate, pickles e o nosso molho."
+},
+"Cogumelos azeitonas pimentos cebola ananás": {
+"pt": "Cogumelos, azeitonas, pimentos, cebola, ananás",
+"en": "Mushrooms, olives, peppers, onion, pineapple"
+},
+"Com Arroz e salada": {
+"en": "Served with rice and salad"
+},
+"Com batata e salada": {
+"en": "Served with fries and salad"
+},
+"Crispy Chicken breast , patty, cheddar cheese, tomato, lettuce, pickles and ranch sauce.": {
+"pt": "Peito de frango crispy, cheddar, tomate, alface, pickles e molho ranch",
+"en": "Crispy chicken breast, cheddar cheese, tomato, lettuce, pickles and ranch sauce."
+},
+"Crispy chicken breast dipped in BBQ sauce with coleslaw, patty, mozzarella , pickles, and classic sauce": {
+"pt": "Peito de frango crispy em molho BBQ com coleslaw, mozzarella, pickles e molho clássico",
+"en": "Crispy chicken breast dipped in BBQ sauce with coleslaw, mozzarella, pickles and classic sauce"
+},
+"Crispy chicken breast dipped in buffalo saude, pickles, lettuce, tomatoes and runch sauce": {
+"pt": "Peito de frango crispy em molho buffalo com pickles, alface, tomate e molho ranch",
+"en": "Crispy chicken breast dipped in buffalo sauce, pickles, lettuce, tomatoes and ranch sauce"
+},
+"Crispy strips, mozzarella sticks, onion rings, fried wings, cheddar balls, garlic bread and french fries served with cocktail and salsa.": {
+"pt": "Tiras crispy, sticks de mozzarella, onion rings, asas fritas, bolas de cheddar, pão de alho e batata frita, servidos com molho cocktail e salsa"
+},
+"DOUBLE BEEF PATTIES, TWO CHEDDAR SLICE, ONIONS, PICKLES AND CLASSIC SAUCE": {
+"pt": "Dois hambúrgueres de carne, duas fatias de cheddar, cebola, pickles e molho clássico"
+},
+"Dipped in BBQ or BUFFALO sauce.": {
+"pt": "Banhado em molho BBQ ou Buffalo"
+},
+"FRIED CHICKEN STRIPS, LUTTCE, TOMATO, CHEDDAR SAUCE, JALAPENOS DRIZZLED WITH ACLASSIC SAUCE": {
+"pt": "Tiras de frango fritas, alface, tomate, molho de cheddar e jalapeños, regados com molho clássico",
+"en": "Fried chicken strips, lettuce, tomato, cheddar sauce, jalapeños drizzled with classic sauce"
+},
+"FUSILI PASTA, CHICKEN, WITH FRESH CREAM, HOMEMADE PESTO SAUCE, BASIL": {
+"pt": "Pasta fusili com frango, natas, molho pesto caseiro e manjericão"
+},
+"French fries, beef, salsa, jalapeno and spicy mayo sauce.": {
+"pt": "Batata frita, carne, salsa, jalapeño e maionese picante"
+},
+"Freshly cut iceberg and mixed cabbage, cucumber, carrot, crab sticks, with a lemon mayo dressing": {
+"pt": "Iceberg recém-cortado e mistura de repolho, pepino, cenoura e sticks de caranguejo, com molho de maionese de limão"
+},
+"GRILLED BEEF, ROCKET, TOMATOES, PICKLES, AND SPICY CREAMY LEMON SAUCE": {
+"pt": "Carne grelhada, rúcula, tomate, pickles e molho cremoso picante de limão"
+},
+"GRILLED CHICKEN BREAST AND VEGETABLE, MASHED POTATO, MUSHROOM SAUCE": {
+"pt": "Peito de frango grelhado com legumes, puré de batata e molho de cogumelos"
+},
+"GRILLED CHICKEN BREAST SLICED, FRESHLY PEPPER, FRESH MUSHROOM, ONION, MIXED CHEESE, AVOCADO SAUCE": {
+"pt": "Peito de frango grelhado às fatias, pimenta, cogumelos frescos, cebola, mistura de queijos e molho de abacate"
+},
+"GRILLED FILLET STEAK SERVED WITH MASHED POTATOES, AND VEGETABLES, WITH DEMI GLACE SAUCE.": {
+"pt": "Filé grelhado servido com puré de batata e legumes, com molho demi-glace"
+},
+"GRILLED RUM STEAK WITH GRILLED VEGETABLES, MEXICAN RICE, MUSHROOM SAUCE": {
+"pt": "Bife grelhado com legumes grelhados, arroz mexicano e molho de cogumelos"
+},
+"GRILLED RUM STEAK, VEGETABLES, FRENSH FRIES , DEMI GLACE SAUCE": {
+"pt": "Bife grelhado, legumes, batata frita e molho demi-glace",
+"en": "Grilled rump steak, vegetables, french fries, demi-glace sauce"
+},
+"Galinha cebola pimenta cogumelos": {
+"pt": "Galinha, cebola, pimenta, cogumelos",
+"en": "Chicken, onion, pepper, mushrooms"
+},
+"Grilled Chicken breast , lettuce, cheddar cheese slice, jalapeno , tortilla chips and guacamole sauce .": {
+"pt": "Peito de frango grelhado, alface, cheddar, jalapeño, tortilla chips e guacamole",
+"en": "Grilled chicken breast, lettuce, cheddar cheese slice, jalapeño, tortilla chips and guacamole."
+},
+"Grilled chicken, fuslilli pasta, tomato, cucumber, corn, olives, carrot, and lemon mayo dressing.": {
+"pt": "Frango grelhado, pasta fusilli, tomate, pepino, milho, azeitonas, cenoura e molho de maionese de limão",
+"en": "Grilled chicken, fusilli pasta, tomato, cucumber, corn, olives, carrot and lemon mayo dressing."
+},
+"Lettuce , olives, cucumber, red onion, tomato, feta cheese, oregano, and greek dressing.": {
+"pt": "Alface, azeitonas, pepino, cebola roxa, tomate, queijo feta, orégãos e molho grego"
+},
+"MACARONI WITH MIX CHEESE, CHICKEN BREAST CRUNCHY": {
+"pt": "Macarrão com mistura de queijos e peito de frango crispy"
+},
+"MACRONI WITH MIX CHEESE, MUSHROOMS, BROCCOLI, AND JALAPENO.": {
+"pt": "Macarrão com mistura de queijos, cogumelos, brócolos e jalapeño",
+"en": "Macaroni with cheese mix, mushrooms, broccoli and jalapeño."
+},
+"NACHOS, CHEESE, EGG ,": {
+"pt": "Nachos, queijo e ovo",
+"en": "Nachos, cheese, egg"
+},
+"Nachos topped with mixed cheese and jalapeno, guacamole salsa and sour cream.": {
+"pt": "Nachos cobertos com mistura de queijos e jalapeño, guacamole, salsa e sour cream"
+},
+"PASTA COOKED IN OUR CREAMIY WHITE SAUCE, CHICKEN BREAST AND MUSHROOMS, WITH PARMESAN CHEESE.": {
+"pt": "Pasta no nosso cremoso molho branco, peito de frango e cogumelos, com queijo parmesão",
+"en": "Pasta cooked in our creamy white sauce, chicken breast and mushrooms, with parmesan cheese."
+},
+"Pasta, cherry tomatoes, oregano and parmeson cheese": {
+"pt": "Pasta, tomate cherry, orégãos e queijo parmesão",
+"en": "Pasta, cherry tomatoes, oregano and parmesan cheese"
+},
+"Rugula leaves, pomegranate seeds": {
+"pt": "Folhas de rúcula e sementes de romã",
+"en": "Arugula leaves, pomegranate seeds"
+},
+"SERVED WITH FRIED POTATOES 🥔": {
+"pt": "SERVIDO COM BATATA FRITA 🥔",
+"en": "Served with fried potatoes 🥔"
+},
+"Served with fried potatoes and salad 🥗": {
+"pt": "Servido com batata frita e salada 🥗"
+},
+"Swiss'Mushroom BEEF PATTY, CARAMELIZED ONION, GRILLED MUSHROOMS, AND MOZZARELLA CHEESE, WITH CLASSIC SAUCE": {
+"en": "Swiss mushroom beef patty, caramelized onion, grilled mushrooms and mozzarella cheese, with classic sauce",
+"pt": "Carne, cebola caramelizada, cogumelos grelhados e queijo mozzarella, com molho clássico"
+},
+"Toasted slices of garlic bread topped with cheese and oregano.": {
+"pt": "Fatias de pão de alho torrado, com queijo e orégãos"
+},
+"Tomate orégano mozzarella": {
+"pt": "Tomate, orégãos, mozzarella",
+"en": "Tomato, oregano, mozzarella"
+},
+"Tuna, Lettuce, corn, egg, cucumber, black olives, green pepper, red radish cherry tomato and lemon oil dressing": {
+"pt": "Atum, alface, milho, ovo, pepino, azeitonas pretas, pimento verde, rabanete, tomate cherry e molho de azeite de limão"
+},
+"Variety of Mango, Green apple, Pineapple, Passion fruit, strawberry, lemon, and blueberry": {
+"pt": "Variedade de manga, maçã verde, ananás, maracujá, morango, limão e mirtilo",
+"en": "Mango, green apple, pineapple, passion fruit, strawberry, lemon and blueberry"
+},
+"choose any of Caramelo, Cafe Gelado, Vanila, Brone, Bonbon, Flake, Oreo, Ferrerro, Milkbar, Chocolate": {
+"pt": "Escolhe entre: Caramelo, Café Gelado, Vanilla, Brownie, Bonbon, Flake, Oreo, Ferrero, Milkbar, Chocolate",
+"en": "Choose any of: Caramel, Iced Coffee, Vanilla, Brownie, Bonbon, Flake, Oreo, Ferrero, Milkbar, Chocolate"
+},
+"choose from the variety of shakes we have Chocolate, Strawberry, Banana, pineapple, bubblegum, lime, caramel, cranberry": {
+"pt": "Escolhe entre a variedade de shakes que temos\nChocolate, Morango, Banana, Ananás, Bubblegum, Lima, Caramelo, Cranberry"
+},
+"juicy grilled chicken, curry creamy sauce, basmati rice with garden salad aside.": {
+"pt": "Frango grelhado suculento, molho cremoso de curry, arroz basmati com salada à parte"
+},
+"seasoned beef and egg omelette and desired toppings": {
+"pt": "Omelete de carne temperada e ovo, com coberturas à escolha"
+}
+};
+function tr(t){ if(!t) return t; const e = TX[t.replace(/\s+/g,' ').trim()]; return (e && e[LANG]) ? e[LANG] : t; }
 const I18N = {
   pt:{search:'Procurar no menu…', grid:'Grelha', reels:'Reels', open:'Aberto agora', closed:'Fechado agora',
       menuTitle:'O Menu', menuSub:'Tudo feito na hora', items:'itens', noRes:'Nada encontrado', noResSub:'Tenta outra palavra…',
@@ -251,7 +845,8 @@ const I18N = {
       aiWa:'Order on WhatsApp', aiHours:'See hours',
       cartTitle:'My order', cartEmpty:'Your cart is empty', cartTotal:'Total', cartShare:'Share on WhatsApp', cartClear:'Clear', cartBtn:'Order'}
 };
-let LANG = localStorage.getItem('cmx_lang') || 'pt';
+let LANG = localStorage.getItem('cmx_lang');
+if(!LANG){ const nl = (navigator.language || navigator.userLanguage || 'pt').toLowerCase(); LANG = nl.startsWith('pt') ? 'pt' : 'en'; }
 let DATA = null, VIEW = 'grid';
 let ITEM_INDEX = {};
 let CART = JSON.parse(localStorage.getItem('cmx_cart')||'{}');
@@ -276,7 +871,7 @@ function build(){
   DATA.menus.forEach((m,i)=>{
     const b = document.createElement('button');
     b.className = 'chip' + (i===0?' active':'');
-    b.textContent = m.name;
+    b.textContent = tr(m.name);
     b.dataset.mi = i;
     b.onclick = ()=>{
       SUPPRESS_SPY = true;
@@ -313,24 +908,24 @@ function render(q){
     const secs = menu.sections.map(sec=>{ si++;
       const items = sec.items.map((it,ii)=>({it,ii})).filter(({it})=>{
         if(!q) return true;
-        return (it.name+' '+(it.desc||'')).toLowerCase().includes(q);
+        return (it.name+' '+(it.desc||'')+' '+tr(it.name)+' '+tr(it.desc||'')).toLowerCase().includes(q);
       });
       if(!items.length) return '';
-      return `<div class="sec-head" id="sec-${mi}-${si}" data-mi="${mi}"><h3>${esc(sec.name)}</h3><div class="line"></div><span class="count">${items.length} ${I18N[LANG].items}</span></div>` +
+      return `<div class="sec-head" id="sec-${mi}-${si}" data-mi="${mi}"><h3>${esc(tr(sec.name))}</h3><div class="line"></div><span class="count">${items.length} ${I18N[LANG].items}</span></div>` +
         `<div class="grid" data-mi="${mi}">` + items.map(({it,ii})=>{
           const key = itemKey(mi,si,ii);
-          const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy">` : `<div class="noimg">C</div>`;
+          const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(tr(it.name))}" loading="lazy">` : `<div class="noimg">C</div>`;
           const price = it.price ? `<span class="price"><small>MT</small>${fmtPrice(it.price)}</span>` : '';
-          const desc = it.desc ? `<p class="desc">${esc(it.desc)}</p>` : '';
+          const desc = it.desc ? `<p class="desc">${esc(tr(it.desc))}</p>` : '';
           const chev = it.desc ? `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>` : '';
-          return `<article class="item" id="it-${key}"${it.desc?` onclick="toggleExpand('${key}',event)"`:''}><div class="ph">${img}<div class="iacts"><button class="icon-btn ${LIKES[key]?'liked':''}" data-like="${key}" onclick="toggleLike('${key}')" aria-label="like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button><button class="icon-btn" onclick="shareItem('${key}')" aria-label="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button></div><button class="add-btn" data-key="${key}" onclick="addToCart('${key}',this)" aria-label="add">+</button></div><div class="p-under">${price}</div><div class="body"><div class="row"><h4>${esc(it.name)}</h4>${chev}</div>${desc}</div></article>`;
+          return `<article class="item" id="it-${key}"${it.desc?` onclick="toggleExpand('${key}',event)"`:''}><div class="ph">${img}<div class="iacts"><button class="icon-btn ${LIKES[key]?'liked':''}" data-like="${key}" onclick="toggleLike('${key}')" aria-label="like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button><button class="icon-btn" onclick="shareItem('${key}')" aria-label="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button></div><button class="add-btn" data-key="${key}" onclick="addToCart('${key}',this)" aria-label="add">+</button></div><div class="p-under">${price}</div><div class="body"><div class="row"><h4>${esc(tr(it.name))}</h4>${chev}</div>${desc}</div></article>`;
         }).join('') + `</div>` +
         `<div class="reels" data-mi="${mi}">` + items.map(({it,ii})=>{
           const key = itemKey(mi,si,ii);
-          const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy">` : `<div class="noimg">C</div>`;
+          const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(tr(it.name))}" loading="lazy">` : `<div class="noimg">C</div>`;
           const price = it.price ? `<span class="price"><small>MT</small>${fmtPrice(it.price)}</span>` : '';
-          const desc = it.desc ? `<p class="desc">${esc(it.desc)}</p>` : '';
-          return `<div class="reel" id="it-${key}"><div class="rph">${img}</div><div class="rdet"><div class="rtop"><div><div class="rsec">${esc(sec.name)}</div><h4>${esc(it.name)}</h4></div><div class="price-row">${price}<button class="icon-btn ${LIKES[key]?'liked':''}" data-like="${key}" onclick="toggleLike('${key}')" aria-label="like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button><button class="icon-btn" onclick="shareItem('${key}')" aria-label="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button><button class="add-btn" data-key="${key}" onclick="addToCart('${key}',this)" aria-label="add">+</button></div></div>${desc}</div></div>`;
+          const desc = it.desc ? `<p class="desc">${esc(tr(it.desc))}</p>` : '';
+          return `<div class="reel" id="it-${key}"><div class="rph">${img}</div><div class="rdet"><div class="rtop"><div><div class="rsec">${esc(tr(sec.name))}</div><h4>${esc(tr(it.name))}</h4></div><div class="price-row">${price}<button class="icon-btn ${LIKES[key]?'liked':''}" data-like="${key}" onclick="toggleLike('${key}')" aria-label="like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button><button class="icon-btn" onclick="shareItem('${key}')" aria-label="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button><button class="add-btn" data-key="${key}" onclick="addToCart('${key}',this)" aria-label="add">+</button></div></div>${desc}</div></div>`;
         }).join('') + `</div>`;
     }).join('');
     if(secs) html += secs;
@@ -349,7 +944,7 @@ function buildInstaWall(){
   const picks = pool.filter((_,i)=>i%9===0).slice(0,6);
   const hearts = ['❤ 1.2k','❤ 847','❤ 632','❤ 521','❤ 498','❤ 377'];
   document.getElementById('igwall').innerHTML = picks.map((it,i)=>
-    `<a class="ig" href="https://instagram.com/comanxero" target="_blank" rel="noopener"><img src="${esc(it.img)}" alt="${esc(it.name)}" loading="lazy"><span class="heart">${hearts[i%hearts.length]}</span></a>`).join('');
+    `<a class="ig" href="https://instagram.com/comanxero" target="_blank" rel="noopener"><img src="${esc(it.img)}" alt="${esc(tr(it.name))}" loading="lazy"><span class="heart">${hearts[i%hearts.length]}</span></a>`).join('');
 }
 
 function setView(v){
@@ -449,8 +1044,8 @@ function renderCartUI(){
     const it = ITEM_INDEX[key]; if(!it) return;
     const qty = CART[key];
     const price = parseFloat(it.price)||0;
-    const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(it.name)}">` : `<div class="noimg">C</div>`;
-    rows += `<div class="cart-row">${img}<div class="ci"><h5>${esc(it.name)}</h5><div class="up">${fmtPrice(it.price)} MT</div></div>
+    const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(tr(it.name))}">` : `<div class="noimg">C</div>`;
+    rows += `<div class="cart-row">${img}<div class="ci"><h5>${esc(tr(it.name))}</h5><div class="up">${fmtPrice(it.price)} MT</div></div>
       <div class="qty"><button onclick="changeQty('${key}',-1)">−</button><span>${qty}</span><button onclick="changeQty('${key}',1)">+</button></div>
       <div class="lt">${fmtPrice((price*qty).toFixed(2))} MT</div>
       <button class="rm" onclick="removeFromCart('${key}')" aria-label="remove">✕</button></div>`;
@@ -466,7 +1061,7 @@ function renderCartUI(){
 function shareCart(){
   const lines = Object.keys(CART).map(key=>{
     const it = ITEM_INDEX[key]; if(!it) return null;
-    return `${CART[key]}x ${it.name} — ${fmtPrice(it.price)} MT`;
+    return `${CART[key]}x ${tr(it.name)} — ${fmtPrice(it.price)} MT`;
   }).filter(Boolean);
   if(!lines.length) return;
   const total = cartTotal();
@@ -496,8 +1091,8 @@ function toggleLike(key){
 function shareItem(key){
   const it = ITEM_INDEX[key]; if(!it) return;
   const url = SHARE_BASE + '#it-' + key;
-  const text = it.name + (it.price ? ' — ' + fmtPrice(it.price) + ' MT' : '') + ' · COMANCHERO';
-  if(navigator.share){ navigator.share({title: it.name, text: text, url: url}).catch(()=>{}); }
+  const text = tr(it.name) + (it.price ? ' — ' + fmtPrice(it.price) + ' MT' : '') + ' · COMANCHERO';
+  if(navigator.share){ navigator.share({title: tr(it.name), text: text, url: url}).catch(()=>{}); }
   else { window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank'); }
 }
 function toast(msg){
