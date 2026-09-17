@@ -14,37 +14,37 @@
               "name": "Classic Burger",
               "price": "600",
               "desc": "BEEF PATTY, LETTUCE, TOMATOES, REDONIONS, DILL PICKLES ,AND\nCLASSIC SAUCE.",
-              "img": "img/cards/20_classicburger.jpg"
+              "img": "img/ab3e14b7a8ffb2c6.img"
             },
             {
               "name": "Comanchero Beef Burger",
               "desc": "BEEF PATTY, CHEDDAR PATTY, LETTUCE, DILL PICKLES, JALAPENOS & CLASSIC SAUCE",
               "price": "750.00",
-              "img": "img/cards/21_comancherobeefburger.jpg"
+              "img": "img/6ec6bbb59b30a66c.img"
             },
             {
               "name": "Maputo Beef Burger",
               "desc": "BEEF PATTY, TORTILLA CHIPS, GUACAMOLE, SALSA, Lettuce, CHEDDAR CHEESE SLICE AND JALAPENOS.",
               "price": "750.00",
-              "img": "img/cards/19_maputobeefburger.jpg"
+              "img": "img/b44df8e6c39eea7c.img"
             },
             {
               "name": "Duplo Patty Burger",
               "desc": "DOUBLE BEEF PATTIES, TWO CHEDDAR SLICE, ONIONS, PICKLES AND CLASSIC SAUCE",
               "price": "900.00",
-              "img": "img/cards/18_duplopattyburger.jpg"
+              "img": "img/c7884c1893a1be64.img"
             },
             {
               "name": "Egg'Drama Burger",
               "desc": "BEEF PATTY,  FRIED EGG, CHEDDAR\nSLICE, ONION RINGS WITH BBQ AND A IOLI SAUCE",
               "price": "700.00",
-              "img": "img/cards/16_eggdramaburger.jpg"
+              "img": "img/7339afdd9b97bba3.img"
             },
             {
               "name": "Swiss'Mush",
               "desc": "Swiss'Mushroom\nBEEF PATTY, CARAMELIZED ONION, GRILLED MUSHROOMS, AND MOZZARELLA CHEESE, WITH CLASSIC SAUCE",
               "price": "700.00",
-              "img": "img/cards/17_swissmush.jpg"
+              "img": "img/80c3aa0f4cf36ed6.img"
             }
           ]
         }
