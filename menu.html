@@ -241,6 +241,7 @@ const HOURS = {0:[10,23],1:[10,23],2:[10,23],3:[10,23],4:[10,23],5:[10,23],6:[10
 
 /* ---- item translations (key: original text, whitespace-collapsed) ---- */
 const TX = {
+  "Price on request":{pt:"Preço sob consulta",en:"Price on request"},
 "Beef Burgers": {
 "pt": "Burgers de Carne"
 },
@@ -856,6 +857,7 @@ let __supTO = null;
 let spyObserver = null;
 
 const fmtPrice = p => String(p||'').replace(/\.00$/,'');
+const isNumPrice = p => p !== '' && p != null && !isNaN(parseFloat(p));
 const esc = s => String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 fetch('data.json?v=' + Date.now()).then(r=>r.json()).then(d=>{ DATA = d; build(); });
@@ -915,7 +917,7 @@ function render(q){
         `<div class="grid" data-mi="${mi}">` + items.map(({it,ii})=>{
           const key = itemKey(mi,si,ii);
           const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(tr(it.name))}" loading="lazy">` : `<div class="noimg">C</div>`;
-          const price = it.price ? `<span class="price"><small>MT</small>${fmtPrice(it.price)}</span>` : '';
+          const price = it.price ? (isNumPrice(it.price) ? `<span class="price"><small>MT</small>${fmtPrice(it.price)}</span>` : `<span class="price" style="font-size:.72rem;white-space:normal">${esc(tr(it.price))}</span>`) : '';
           const desc = it.desc ? `<p class="desc">${esc(tr(it.desc))}</p>` : '';
           const chev = it.desc ? `<svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>` : '';
           return `<article class="item" id="it-${key}"${it.desc?` onclick="toggleExpand('${key}',event)"`:''}><div class="ph">${img}<div class="iacts"><button class="icon-btn ${LIKES[key]?'liked':''}" data-like="${key}" onclick="toggleLike('${key}')" aria-label="like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button><button class="icon-btn" onclick="shareItem('${key}')" aria-label="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button></div><button class="add-btn" data-key="${key}" onclick="addToCart('${key}',this)" aria-label="add">+</button></div><div class="p-under">${price}</div><div class="body"><div class="row"><h4>${esc(tr(it.name))}</h4>${chev}</div>${desc}</div></article>`;
@@ -923,7 +925,7 @@ function render(q){
         `<div class="reels" data-mi="${mi}">` + items.map(({it,ii})=>{
           const key = itemKey(mi,si,ii);
           const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(tr(it.name))}" loading="lazy">` : `<div class="noimg">C</div>`;
-          const price = it.price ? `<span class="price"><small>MT</small>${fmtPrice(it.price)}</span>` : '';
+          const price = it.price ? (isNumPrice(it.price) ? `<span class="price"><small>MT</small>${fmtPrice(it.price)}</span>` : `<span class="price" style="font-size:.72rem;white-space:normal">${esc(tr(it.price))}</span>`) : '';
           const desc = it.desc ? `<p class="desc">${esc(tr(it.desc))}</p>` : '';
           return `<div class="reel" id="it-${key}"><div class="rph">${img}</div><div class="rdet"><div class="rtop"><div><div class="rsec">${esc(tr(sec.name))}</div><h4>${esc(tr(it.name))}</h4></div><div class="price-row">${price}<button class="icon-btn ${LIKES[key]?'liked':''}" data-like="${key}" onclick="toggleLike('${key}')" aria-label="like"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg></button><button class="icon-btn" onclick="shareItem('${key}')" aria-label="share"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v13"/><path d="M7 8l5-5 5 5"/><path d="M5 13v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6"/></svg></button><button class="add-btn" data-key="${key}" onclick="addToCart('${key}',this)" aria-label="add">+</button></div></div>${desc}</div></div>`;
         }).join('') + `</div>`;
@@ -1045,7 +1047,7 @@ function renderCartUI(){
     const qty = CART[key];
     const price = parseFloat(it.price)||0;
     const img = it.img ? `<img src="${esc(it.img)}" alt="${esc(tr(it.name))}">` : `<div class="noimg">C</div>`;
-    rows += `<div class="cart-row">${img}<div class="ci"><h5>${esc(tr(it.name))}</h5><div class="up">${fmtPrice(it.price)} MT</div></div>
+    rows += `<div class="cart-row">${img}<div class="ci"><h5>${esc(tr(it.name))}</h5><div class="up">${isNumPrice(it.price) ? fmtPrice(it.price)+' MT' : esc(tr(it.price))}</div></div>
       <div class="qty"><button onclick="changeQty('${key}',-1)">−</button><span>${qty}</span><button onclick="changeQty('${key}',1)">+</button></div>
       <div class="lt">${fmtPrice((price*qty).toFixed(2))} MT</div>
       <button class="rm" onclick="removeFromCart('${key}')" aria-label="remove">✕</button></div>`;
@@ -1061,7 +1063,7 @@ function renderCartUI(){
 function shareCart(){
   const lines = Object.keys(CART).map(key=>{
     const it = ITEM_INDEX[key]; if(!it) return null;
-    return `${CART[key]}x ${tr(it.name)} — ${fmtPrice(it.price)} MT`;
+    return `${CART[key]}x ${tr(it.name)}${isNumPrice(it.price) ? ' — ' + fmtPrice(it.price) + ' MT' : ''}`;
   }).filter(Boolean);
   if(!lines.length) return;
   const total = cartTotal();
@@ -1091,7 +1093,7 @@ function toggleLike(key){
 function shareItem(key){
   const it = ITEM_INDEX[key]; if(!it) return;
   const url = SHARE_BASE + '#it-' + key;
-  const text = tr(it.name) + (it.price ? ' — ' + fmtPrice(it.price) + ' MT' : '') + ' · COMANCHERO';
+  const text = tr(it.name) + (isNumPrice(it.price) ? ' — ' + fmtPrice(it.price) + ' MT' : '') + ' · COMANCHERO';
   if(navigator.share){ navigator.share({title: tr(it.name), text: text, url: url}).catch(()=>{}); }
   else { window.open('https://wa.me/?text=' + encodeURIComponent(text + ' ' + url), '_blank'); }
 }
