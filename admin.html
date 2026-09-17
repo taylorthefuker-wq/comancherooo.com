@@ -422,6 +422,7 @@ function renderMenu() {
           (it.price ? "<span class='pr'><small>MT</small> " + esc(it.price) + "</span>" : "") + "</div>" +
           (it.desc ? "<div class='ds'>" + esc(it.desc) + "</div>" : "") +
           "</div><div class='ops'>" +
+          "<button class='btn btn-ghost btn-sm' onclick='shareItem(" + si + "," + ii + ")'>Share</button>" +
           "<button class='btn btn-ghost btn-sm' onclick='editItem(" + si + "," + ii + ")'>Edit</button>" +
           "<button class='btn btn-danger btn-sm' onclick='deleteItem(" + si + "," + ii + ")'>Delete</button>" +
           "</div></div>";
@@ -431,6 +432,88 @@ function renderMenu() {
     h += "<div style='margin-top:14px'><button class='btn btn-ghost btn-sm' onclick='addSection()'>+ Add category</button></div>";
   }
   box.innerHTML = h;
+}
+
+/* ---------- social share ---------- */
+function buildCaption(it, lang){
+  var price = it.price ? " — MT " + it.price : "";
+  var loc = DATA.location || "Maputo Shopping Center";
+  var tags = "\n\n#comanchero #fastfood #maputo #burger #grill #pizza";
+  var head = lang === "pt"
+    ? "🔥 " + it.name + price + "\n📍 " + loc + "\n🌐 comancherooo.com\n\nPeça já o seu!"
+    : "🔥 " + it.name + price + "\n📍 " + loc + "\n🌐 comancherooo.com\n\nOrder yours now!";
+  if (it.desc) head += "\n" + it.desc;
+  return head + tags;
+}
+function shareItem(si, ii){
+  var m = DATA.menus[CUR]; if (!m || !m.sections[si] || !m.sections[si].items[ii]) return;
+  var it = m.sections[si].items[ii];
+  var imgAbs = it.img ? (it.img.indexOf("http") === 0 ? it.img : "https://comancherooo.com/" + it.img) : "";
+  var html = "<h2>Share '" + esc(it.name) + "'</h2>";
+  if (imgAbs) {
+    html += "<img src='" + esc(imgAbs) + "?v=" + Date.now() + "' style='width:100%;max-width:220px;border-radius:14px;margin:10px auto 4px;display:block'>";
+  } else {
+    html += "<div class='lbl' style='margin-top:10px'>No photo on this item — only the caption will be shared.</div>";
+  }
+  html += "<div class='lbl'>Caption (editable)</div>" +
+    "<textarea class='field' id='sh-cap' rows='6' style='margin-top:6px'></textarea>" +
+    "<div class='mrow'>" +
+      "<button class='btn btn-ghost btn-sm' id='sh-pt' onclick=\"setCapLang('pt')\">PT</button>" +
+      "<button class='btn btn-ghost btn-sm' id='sh-en' onclick=\"setCapLang('en')\">EN</button>" +
+      "<button class='btn btn-ghost btn-sm' onclick='copyCap()'>Copy caption</button>" +
+    "</div>" +
+    "<div class='mrow'><button class='btn' onclick='shareNative()' style='width:100%'>📤 Share photo + caption</button></div>" +
+    "<div class='lbl' style='margin-top:14px'>Quick links</div>" +
+    "<div class='mrow'>" +
+      "<a class='btn btn-ghost btn-sm' href='https://www.instagram.com/comanxero/' target='_blank' rel='noopener'>Instagram</a>" +
+      "<a class='btn btn-ghost btn-sm' href='https://www.facebook.com/comanxeroo/' target='_blank' rel='noopener'>Facebook</a>" +
+      "<a class='btn btn-ghost btn-sm' href='https://business.facebook.com/latest/home' target='_blank' rel='noopener'>Meta Business Suite</a>" +
+    "</div>" +
+    "<div class='mrow'><button class='btn btn-ghost' onclick='closeModal()'>Close</button></div>";
+  openModal(html);
+  var box = $("modalbox");
+  box._share = { it: it, imgAbs: imgAbs, file: null };
+  if (imgAbs) {
+    fetch(imgAbs + "?v=" + Date.now()).then(function(r){ return r.blob(); }).then(function(b){
+      box._share.file = new File([b], "comanchero.jpg", { type: b.type || "image/jpeg" });
+    }).catch(function(){});
+  }
+  setCapLang("pt");
+}
+function setCapLang(lang){
+  var sh = $("modalbox")._share; if (!sh) return;
+  $("sh-cap").value = buildCaption(sh.it, lang);
+  var pt = $("sh-pt"), en = $("sh-en");
+  pt.style.borderColor = lang === "pt" ? "var(--red,#ED2949)" : "";
+  en.style.borderColor = lang === "en" ? "var(--red,#ED2949)" : "";
+}
+function copyCap(){
+  var ta = $("sh-cap");
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(ta.value).then(function(){ toast("Caption copied", true); }, function(){ ta.select(); document.execCommand("copy"); toast("Caption copied", true); });
+  } else { ta.select(); document.execCommand("copy"); toast("Caption copied", true); }
+}
+async function shareNative(){
+  var sh = $("modalbox")._share; if (!sh) return;
+  var cap = $("sh-cap").value;
+  try {
+    if (sh.file && navigator.canShare && navigator.canShare({ files: [sh.file] })) {
+      await navigator.share({ files: [sh.file], text: cap });
+      return;
+    }
+    if (!sh.imgAbs && navigator.share) { await navigator.share({ text: cap }); return; }
+    throw new Error("fallback");
+  } catch (e) {
+    if (e && e.name === "AbortError") return;
+    if (sh.imgAbs) {
+      var a = document.createElement("a"); a.href = sh.imgAbs; a.download = "comanchero.jpg"; a.click();
+      copyCap();
+      toast("Photo downloaded + caption copied — open Instagram/Facebook to post", true);
+    } else {
+      copyCap();
+      toast("Sharing not supported on this browser — caption copied instead", false);
+    }
+  }
 }
 
 /* ---------- modal helpers ---------- */
