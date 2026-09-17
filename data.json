@@ -233,7 +233,7 @@
               "name": "WHOLE GRILLED LAMP",
               "desc": "",
               "price": "Price on request",
-              "img": "img/541c7f6f7d7b925d.img"
+              "img": "img/c1ff9894dbbe1506.img"
             },
             {
               "name": "Carnero no forno",
@@ -263,7 +263,7 @@
               "name": "MIX GRILL KEBAB",
               "desc": "2-PERSON",
               "price": "3.00",
-              "img": "img/06d7074fb0791312.img"
+              "img": "img/c59c3e749fe0d349.img"
             },
             {
               "name": "GRILLED CARNERO",
@@ -292,13 +292,13 @@
               "name": "Steak Vege",
               "desc": "GRILLED RUM STEAK WITH GRILLED VEGETABLES, MEXICAN RICE, MUSHROOM SAUCE",
               "price": "1,500.00",
-              "img": "img/cards/43_steakvege.jpg"
+              "img": "img/cf976015ebe1d432.img"
             },
             {
               "name": "Steak & Fries",
               "desc": "GRILLED RUM STEAK, VEGETABLES, FRENSH FRIES , DEMI GLACE SAUCE",
               "price": "1,500.00",
-              "img": "img/3954ae03a9929fe9.img"
+              "img": "img/f638eaf8d06a1f03.img"
             },
             {
               "name": "Chicken Vege",
@@ -310,7 +310,7 @@
               "name": "Chicken Filet",
               "desc": "GRILLED CHICKEN BREAST AND VEGETABLE, MASHED POTATO, MUSHROOM SAUCE",
               "price": "1,250.00",
-              "img": "img/cards/40_chickenfilet.jpg"
+              "img": "img/19f8fac28e4ee360.img"
             },
             {
               "name": "Crispy Chicken Rice",
@@ -328,13 +328,13 @@
               "name": "Crispy Strips",
               "desc": "CRISPY CHICKEN STRIPS WITH FRENCH FRIES, COLESLAW. SAUCE ASIDE",
               "price": "1,100.00",
-              "img": "img/58da868fc930a851.img"
+              "img": "img/d26a754bda590162.img"
             },
             {
               "name": "Fajita Chicken",
               "desc": "",
               "price": "1,200.00",
-              "img": "img/cards/39_fajitachicken.jpg"
+              "img": "img/072ac370cf4bf011.img"
             }
           ]
         }
