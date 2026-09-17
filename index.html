@@ -113,7 +113,8 @@
 </footer>
 
 <script>
-fetch('data.json').then(r=>r.json()).then(DATA=>{
+fetch('data.json?v=' + Date.now()).then(r=>r.json()).then(DATA=>{
+  document.querySelector('.hero').style.background = "linear-gradient(rgba(0,0,0,.25),rgba(0,0,0,.55)), url('img/hero.jpg?v=" + Date.now() + "') center/cover no-repeat";
   document.getElementById('loc').textContent = '📍 ' + DATA.location;
   const tabs = document.getElementById('tabs');
   const panels = document.getElementById('panels');
