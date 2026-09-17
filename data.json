@@ -286,7 +286,7 @@
               "name": "Fillet Steak",
               "desc": "GRILLED FILLET STEAK SERVED WITH MASHED POTATOES, AND VEGETABLES, WITH DEMI GLACE SAUCE.",
               "price": "1,700.00",
-              "img": "img/cards/37_filletsteak.jpg"
+              "img": "img/7d56b1355549706f.img"
             },
             {
               "name": "Steak Vege",
@@ -322,13 +322,13 @@
               "name": "Chicken Curry",
               "desc": "juicy grilled chicken, curry creamy sauce, basmati rice with garden salad aside.",
               "price": "1,100.00",
-              "img": "img/cards/36_chickencurry.jpg"
+              "img": "img/66f8517e3bb3c35b.img"
             },
             {
               "name": "Crispy Strips",
               "desc": "CRISPY CHICKEN STRIPS WITH FRENCH FRIES, COLESLAW. SAUCE ASIDE",
               "price": "1,100.00",
-              "img": "img/cards/38_crispystrips.jpg"
+              "img": "img/58da868fc930a851.img"
             },
             {
               "name": "Fajita Chicken",
@@ -421,13 +421,13 @@
               "name": "Mac Vege",
               "desc": "MACRONI WITH MIX CHEESE, MUSHROOMS, BROCCOLI, AND JALAPENO.",
               "price": "550.00",
-              "img": "img/cards/14_macvege.jpg"
+              "img": "img/4ab4b0df01378ade.img"
             },
             {
               "name": "Mac Chicken",
               "desc": "MACARONI WITH MIX CHEESE, CHICKEN BREAST CRUNCHY",
               "price": "620.00",
-              "img": "img/cards/15_macchicken.jpg"
+              "img": "img/6cce45fdd01ad73c.img"
             }
           ]
         },
@@ -597,7 +597,7 @@
               "name": "Nachos",
               "desc": "Nachos topped with mixed cheese and jalapeno, guacamole salsa and sour cream.",
               "price": "490.00",
-              "img": "img/cards/09_nachos.jpg"
+              "img": "img/fa7a9f302f3f6e28.img"
             },
             {
               "name": "NACHOS BREAKFAST",
