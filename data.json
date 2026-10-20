@@ -95,8 +95,8 @@
       },
       {
        "name": "Kids Meal Burger",
+       "price": "500.00",
        "desc": "2 Mini Burgers, served with fries. Chicken or Beef",
-       "price": "450.00",
        "img": "img/a390b9c9de986e28.img"
       }
      ]
