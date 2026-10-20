@@ -170,12 +170,6 @@
      "name": "Grill plates",
      "items": [
       {
-       "name": "1 Carne",
-       "price": "750.00",
-       "desc": "",
-       "img": "img/uploads/1789641695542-1000303469.jpg"
-      },
-      {
        "name": "1 ADANA KEBAP",
        "price": "750.00",
        "desc": "",
@@ -185,7 +179,7 @@
        "name": "1 URFA KEBAP",
        "price": "750.00",
        "desc": "",
-       "img": "img/uploads/1789641749877-1000303469.jpg"
+       "img": "img/uploads/1792501497469-1001703538.jpg"
       },
       {
        "name": "2 ESPETADAS",
