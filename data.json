@@ -254,9 +254,9 @@
      "items": [
       {
        "name": "Fillet Steak",
-       "desc": "GRILLED FILLET STEAK SERVED WITH MASHED POTATOES, AND VEGETABLES, WITH DEMI GLACE SAUCE.",
        "price": "1,700.00",
-       "img": "img/7d56b1355549706f.img"
+       "desc": "GRILLED FILLET STEAK SERVED WITH MASHED POTATOES, AND VEGETABLES, WITH DEMI GLACE SAUCE.",
+       "img": "img/uploads/1792497870494-1001588441.jpg"
       },
       {
        "name": "Steak Vege",
