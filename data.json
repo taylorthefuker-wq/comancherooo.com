@@ -278,8 +278,8 @@
       },
       {
        "name": "Crispy Chicken Rice",
+       "price": "1,250.00",
        "desc": "CRISPY CHICKEN BREAST, WITH SPICY MEXICAN RICE, SPECIAL SAUCE ON TOP, GARDEN SALAD ASIDE",
-       "price": "1,150.00",
        "img": "img/cards/41_crispychickenrice.jpg"
       },
       {
@@ -290,8 +290,8 @@
       },
       {
        "name": "Crispy Strips",
+       "price": "1,150.00",
        "desc": "CRISPY CHICKEN STRIPS WITH FRENCH FRIES, COLESLAW. SAUCE ASIDE",
-       "price": "1,100.00",
        "img": "img/d26a754bda590162.img"
       },
       {
